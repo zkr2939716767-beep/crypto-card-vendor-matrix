@@ -2,6 +2,19 @@
   "use strict";
 
   const vendors = {
+    blocksec: { name: "BlockSec", url: "https://blocksec.com/", domain: "blocksec.com", abbr: "BS", bg: "#0F172A", fg: "#FFFFFF" },
+    certora: { name: "Certora", url: "https://www.certora.com/", domain: "certora.com", abbr: "CE", bg: "#0F172A", fg: "#FFFFFF" },
+    chainalysis: { name: "Chainalysis", url: "https://www.chainalysis.com/", domain: "chainalysis.com", abbr: "CA", bg: "#0F172A", fg: "#FFFFFF" },
+    elliptic: { name: "Elliptic", url: "https://www.elliptic.co/", domain: "elliptic.co", abbr: "EL", bg: "#0F172A", fg: "#FFFFFF" },
+    hypernative: { name: "Hypernative", url: "https://www.hypernative.io/", domain: "hypernative.io", abbr: "HN", bg: "#0F172A", fg: "#FFFFFF" },
+    immunefi: { name: "Immunefi", url: "https://immunefi.com/", domain: "immunefi.com", abbr: "IM", bg: "#0F172A", fg: "#FFFFFF" },
+    nasdaq: { name: "Nasdaq", url: "https://www.nasdaq.com/", domain: "nasdaq.com", abbr: "NQ", bg: "#0F172A", fg: "#FFFFFF" },
+    paladin: { name: "Paladin", url: "https://paladinsec.co/", domain: "paladinsec.co", abbr: "PA", bg: "#0F172A", fg: "#FFFFFF" },
+    pomelo: { name: "Pomelo", url: "https://pomelo.la/", domain: "pomelo.la", abbr: "PO", bg: "#0F172A", fg: "#FFFFFF" },
+    sardine: { name: "Sardine", url: "https://www.sardine.ai/", domain: "sardine.ai", abbr: "SA", bg: "#0F172A", fg: "#FFFFFF" },
+    slowmist: { name: "SlowMist", url: "https://www.slowmist.com/", domain: "slowmist.com", abbr: "SM", bg: "#0F172A", fg: "#FFFFFF" },
+    trmlabs: { name: "TRM Labs", url: "https://www.trmlabs.com/", domain: "trmlabs.com", abbr: "TRM", bg: "#0F172A", fg: "#FFFFFF" },
+    worldcheck: { name: "LSEG World-Check", url: "https://www.lseg.com/en/risk-intelligence/screening-solutions/world-check-kyc-screening", domain: "lseg.com", abbr: "WC", bg: "#0F172A", fg: "#FFFFFF" },
     bybit: { name: "Bybit Card", url: "https://www.bybit.com/en/cards/", domain: "bybit.com", abbr: "BY", bg: "#0F172A", fg: "#FBBF24" },
     bitget: { name: "Bitget Card", url: "https://www.bitget.com/cards", domain: "bitget.com", abbr: "BG", bg: "#0F172A", fg: "#22D3EE" },
     etherfi: { name: "ether.fi Cash", url: "https://www.ether.fi/cash", domain: "ether.fi", abbr: "ef", bg: "#4F46E5", fg: "#FFFFFF" },

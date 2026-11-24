@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crypto Card Ecosystem & Infrastructure Vendor Matrix (2026)</title>
+  <title>Crypto Card Ecosystem & Risk Compliance Matrix (2026)</title>
   <link rel="stylesheet" href="./assets/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -144,26 +144,64 @@
       .no-print { display: none !important; }
       body { background: #FFFFFF; }
     }
+
+    .matrix-grid { grid-template-columns:210px repeat(4,minmax(0,1fr)); }
+    #poster-canvas header { gap:24px; }
+    #poster-canvas h1 { line-height:1.3; }
+    #poster-canvas h1 > span { display:block; margin:6px 0 0; font-size:17px; }
+    .matrix-row { display:contents; }
+    .matrix-row[hidden], .section-banner[hidden] { display:none !important; }
+    .matrix-grid > div:nth-child(n+2):nth-child(-n+5) { align-items:flex-start; flex-direction:column; gap:8px; }
+    .matrix-toolbar { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px; margin-bottom:8px; background:#0f172a; border-radius:8px; color:white; font-size:12px; }
+    .matrix-toolbar[hidden] { display:none !important; }
+    .view-buttons { display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
+    .matrix-toolbar button, .matrix-toolbar a { border:1px solid #475569; border-radius:5px; background:#1e293b; color:#f8fafc; padding:7px 10px; cursor:pointer; text-decoration:none; line-height:1.4; white-space:nowrap; }
+    .matrix-toolbar button[aria-pressed="true"] { background:#e2e8f0; color:#0f172a; border-color:#e2e8f0; }
+    .matrix-toolbar button:hover,.matrix-toolbar a:hover { border-color:#94a3b8; }
+    button:focus-visible, a:focus-visible { outline:2px solid #4f46e5; outline-offset:3px; }
+    .reading-hint { width:min(1560px,calc(100vw - 32px)); color:#475569; font-size:12px; margin:0 0 12px; }
+    .mobile-scope { display:none; }
+    @media(max-width:700px) { .mobile-scope { display:block; width:calc(100vw - 32px); color:#475569; font-size:12px; line-height:1.7; margin:0 0 12px; } }
+    .verification-note { padding:14px 32px; display:flex; gap:14px; align-items:baseline; font-size:12px; line-height:1.7; border-bottom:1px solid #cbd5e1; background:#f8fafc; color:#475569; }
+    .verification-note strong { white-space:nowrap; color:#0f172a; }
+    .verification-note a { white-space:nowrap; color:#334155; text-decoration:underline; }
+    .section-banner { grid-column:1 / -1; background:#e2e8f0; border-top:1px solid #94a3b8; border-bottom:1px solid #94a3b8; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; }
+    .section-banner > div { display:flex; align-items:baseline; gap:16px; }
+    .section-banner span { font-size:11px; font-weight:700; letter-spacing:.06em; color:#475569; }
+    .section-banner h2 { margin:0; font-size:16px; font-weight:800; color:#0f172a; }
+    .section-banner p { margin:0; font-size:11.5px; color:#475569; }
+    .dimension-cell { padding:14px; border-bottom:1px solid #cbd5e1; border-right:1px solid #cbd5e1; background:#f8fafc; display:flex; flex-direction:column; justify-content:center; gap:4px; }
+    .dimension-cell strong { font-size:13px; color:#0f172a; }
+    .dimension-cell > span:last-child { color:#64748b; font-size:11px; }
+    .row-kicker { color:#475569; font-size:10px; font-weight:700; }
+    .risk-cell { min-width:0; padding:14px; background:#fff; border-bottom:1px solid #cbd5e1; border-right:1px solid #cbd5e1; }
+    .risk-cell:last-child { border-right:0; }
+    .risk-item + .risk-item { margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; }
+    .risk-vendors { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:5px; }
+    .risk-text { color:#1e293b; font-size:11.5px; line-height:1.75; margin:0; overflow-wrap:anywhere; }
+    .scope-note { color:#64748b; font-size:10.5px; line-height:1.6; margin:4px 0 0; }
+    .evidence-link { display:inline-block; color:#475569; text-decoration:underline; font-size:10px; white-space:nowrap; }
+    .matrix-grid > .matrix-row[data-row="10"] > div { border-bottom:1px solid #cbd5e1; }
+    @media(max-width:900px) { .matrix-toolbar { align-items:flex-start; flex-direction:column; } }
+    @media print { #poster-scroll { width:1560px; overflow:visible; } .reading-hint { display:none; } }
   </style>
 </head>
 <body class="py-8 px-4 flex flex-col items-center">
 
-  <!-- 悬浮控制栏（截图时可一键隐藏） -->
-  <div id="control-bar" class="no-print mb-4 flex items-center justify-between bg-slate-900 text-white px-5 py-2.5 rounded-lg shadow-md text-xs">
-    <div class="flex items-center gap-3">
-      <span class="px-2 py-0.5 bg-indigo-500 rounded font-semibold">4K 研报导出模式</span>
-      <span>提示：按 <b>Cmd+Option+I</b> 打开控制台 → <b>Cmd+Shift+P</b> 输入 <b>Capture full size screenshot</b> 即可导出超清 PNG</span>
+  <nav id="control-bar" class="no-print matrix-toolbar" aria-label="矩阵显示选项">
+    <div class="view-buttons" role="group" aria-label="查看板块">
+      <button type="button" data-view="all" aria-pressed="true">完整矩阵 · 13 行</button>
+      <button type="button" data-view="infra" aria-pressed="false">生态与基础设施 · 01–10</button>
+      <button type="button" data-view="risk" aria-pressed="false">风控与安全合规 · 11–13</button>
     </div>
-    <div class="flex items-center gap-2">
-      <button id="toggle-mode-btn" onclick="toggleIconMode()" aria-pressed="false" class="px-3 py-1 bg-indigo-600 hover:bg-indigo-500 rounded text-white font-medium transition">
-        纯 Logo 模式
-      </button>
-      <button onclick="document.getElementById('control-bar').style.display='none'" class="px-3 py-1 bg-slate-700 hover:bg-slate-600 rounded text-white font-medium transition">
-        隐藏此提示栏以便截图
-      </button>
+    <div class="view-buttons">
+      <a href="./sources.html">核验说明与来源 ↗</a>
+      <button id="toggle-mode-btn" type="button" onclick="toggleIconMode()" aria-pressed="false">纯 Logo 模式</button>
+      <button id="hide-toolbar-btn" type="button">隐藏工具栏</button>
     </div>
-  </div>
-
+  </nav>
+  <p class="reading-hint no-print">宽表可左右滑动查看四个平台；点击品牌图标进入官网，点击“依据”查看对应披露。</p>
+  <p class="mobile-scope no-print">11–13 行已按官方披露核对；01–10 行尚未逐项复核，费用与收益不作当前报价。</p>
   <!-- 主画布：1560px 瑞士网格海报容器 -->
   <div id="poster-scroll" role="region" aria-label="合作商矩阵，横向滚动查看全部平台" tabindex="0">
   <div id="poster-canvas" class="w-[1560px] bg-white border border-slate-300 shadow-xl overflow-hidden">
@@ -173,21 +211,28 @@
       <div>
         <div class="flex items-center gap-2.5 mb-1.5">
           <span class="inline-block w-2.5 h-2.5 bg-indigo-600"></span>
-          <span class="text-xs font-bold uppercase tracking-widest text-slate-500">GLOBAL CRYPTO CARD INFRASTRUCTURE BENCHMARK · 2026</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-slate-500">GLOBAL CRYPTO CARD INFRASTRUCTURE & RISK COMPLIANCE · 2026</span>
         </div>
         <h1 class="text-[28px] font-extrabold tracking-tight text-slate-900 leading-none">
-          加密卡生态与底层供应商全景对照表
+          加密卡生态、底层供应商与风控合规全景对照表
           <span class="text-slate-400 font-semibold text-xl ml-2">Bybit vs. Bitget vs. Ether.fi vs. KAST</span>
         </h1>
       </div>
       <div class="text-right">
-        <p class="text-xs font-semibold text-slate-700">发卡通道 · 法币VA · 路由生息 · RWA与非托管架构横向拆解</p>
-        <p class="text-[11px] text-slate-400 mt-0.5">Architecture & Vendor Stack Matrix · Swiss Typographic Grid</p>
+        <p class="text-xs font-semibold text-slate-700">发卡通道 · 法币VA · 生息与RWA · 身份合规 · 欺诈与链上风控</p>
+        <p class="text-[11px] text-slate-400 mt-0.5">13 Dimensions · Public Disclosure Comparison · Reviewed 2026-11-24</p>
       </div>
     </header>
 
-    <!-- 5列 x 11行（含表头）核心网格表格 -->
-    <div class="grid grid-cols-[210px_1fr_1fr_1.08fr_1fr]">
+
+    <aside class="verification-note" aria-label="核查范围">
+      <strong>核查口径 · 2026-11-24</strong>
+      <span>11–13 行按所列官方披露核对，并注明业务范围与证据限制。01–10 行沿用原始资料，尚未逐项复核，费用、返现与收益数字不作当前报价。</span>
+      <a href="./sources.html">查看核验说明与来源 ↗</a>
+    </aside>
+
+    <!-- 5列、13个维度：生态基础设施与独立风控板块 -->
+    <div class="grid matrix-grid">
 
       <!-- ==================== 表头行 ==================== -->
       <div class="p-4 bg-slate-100 border-b border-r swiss-grid-border flex flex-col justify-center">
@@ -223,19 +268,18 @@
         <span class="px-2 py-0.5 text-[10px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200 rounded">Hybrid CEX+Wallet</span>
       </div>
 
-      <!-- Col 4: Ether.fi (高亮主推列) -->
-      <div class="p-4 bg-indigo-50/70 border-b border-r swiss-grid-border flex items-center justify-between relative">
-        <div class="absolute top-0 left-0 right-0 h-1 bg-indigo-600"></div>
+      <!-- Col 4: Ether.fi -->
+      <div class="p-4 bg-white border-b border-r swiss-grid-border flex items-center justify-between relative">
         <div class="flex items-center gap-2.5">
           <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-white font-extrabold text-sm shadow-sm">
             e.fi
           </div>
           <div>
-            <div class="text-base font-extrabold text-indigo-950 leading-tight">ether.fi Cash</div>
-            <div class="text-[11px] font-semibold text-indigo-700">非托管合约金库 · 链上生息直刷</div>
+            <div class="text-base font-extrabold text-slate-900 leading-tight">ether.fi Cash</div>
+            <div class="text-[11px] font-medium text-slate-500">非托管合约金库 · 链上生息直刷</div>
           </div>
         </div>
-        <span class="px-2 py-0.5 text-[10px] font-bold bg-indigo-600 text-white rounded">Non-Custodial DeFi</span>
+        <span class="px-2 py-0.5 text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200 rounded">Non-Custodial DeFi</span>
       </div>
 
       <!-- Col 5: KAST -->
@@ -253,6 +297,8 @@
       </div>
 
 
+<div class="section-banner" data-group="infra"><div><span>PART I · 01–10</span><h2>生态与基础设施</h2></div><p>原始资料 · 未逐项核验｜产品与地区条款需另行确认</p></div>
+<div class="matrix-row" data-group="infra" data-row="1" id="row-1">
       <!-- ==================== ROW 01: 费率与返现 ==================== -->
       <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
         <span class="text-[10px] font-bold text-indigo-600">01 · ECONOMICS</span>
@@ -274,11 +320,11 @@
         <div><span class="font-bold text-slate-800">拉新：</span>开卡奖 + 消费 0.1%–0.2% 持续分佣</div>
       </div>
       <!-- Ether.fi -->
-      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border text-[11.5px] leading-relaxed space-y-1">
-        <div><span class="font-bold text-indigo-950">费率：</span>Core免费｜Luxe $199｜Pinnacle $999</div>
-        <div><span class="font-bold text-indigo-950">FX：</span>欧美 <span class="font-bold text-emerald-700">0%</span>｜非美 1%–1.5%｜ATM限$25k/日</div>
-        <div><span class="font-bold text-indigo-950">返现：</span><span class="font-bold text-indigo-700">≥3% ETHFI</span>｜订阅返现 10%–30%</div>
-        <div><span class="font-bold text-indigo-950">拉新：</span>邀友消费满$100奖$10 + 终身消费分润</div>
+      <div class="p-3.5 border-b border-r swiss-grid-border text-[11.5px] leading-relaxed space-y-1">
+        <div><span class="font-bold text-slate-900">费率：</span>Core免费｜Luxe $199｜Pinnacle $999</div>
+        <div><span class="font-bold text-slate-900">FX：</span>欧美 <span class="font-bold text-emerald-700">0%</span>｜非美 1%–1.5%｜ATM限$25k/日</div>
+        <div><span class="font-bold text-slate-900">返现：</span><span class="font-bold text-slate-700">≥3% ETHFI</span>｜订阅返现 10%–30%</div>
+        <div><span class="font-bold text-slate-900">拉新：</span>邀友消费满$100奖$10 + 终身消费分润</div>
       </div>
       <!-- KAST -->
       <div class="p-3.5 border-b swiss-grid-border text-[11.5px] leading-relaxed space-y-1">
@@ -289,6 +335,8 @@
       </div>
 
 
+</div>
+<div class="matrix-row" data-group="infra" data-row="2" id="row-2">
       <!-- ==================== ROW 02: 卡组与发卡行 ==================== -->
       <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
         <span class="text-[10px] font-bold text-indigo-600">02 · CARD ISSUING</span>
@@ -321,12 +369,12 @@
         </span>
       </div>
       <!-- Ether.fi -->
-      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
         <span class="vendor-pill">
           <span class="vendor-icon bg-blue-900 text-white">V</span>VISA
         </span>
         <span class="vendor-pill">
-          <span class="vendor-icon bg-slate-800 text-white">3N</span>Third National <span class="text-[10px] text-slate-400 font-normal">(主力)</span>
+          <span class="vendor-icon bg-slate-800 text-white">3N</span>Third National <span class="text-[10px] text-slate-400 font-normal">(角色待核)</span>
         </span>
         <span class="vendor-pill">
           <span class="vendor-icon bg-sky-500 text-white">R</span>Rain <span class="text-[10px] text-slate-400 font-normal">(发卡底座)</span>
@@ -346,6 +394,8 @@
       </div>
 
 
+</div>
+<div class="matrix-row" data-group="infra" data-row="3" id="row-3">
       <!-- ==================== ROW 03: 法币出入金 (VA) ==================== -->
       <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
         <span class="text-[10px] font-bold text-indigo-600">03 · FIAT RAILS</span>
@@ -368,7 +418,7 @@
         </span>
       </div>
       <!-- Ether.fi -->
-      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
         <span class="vendor-pill">
           <span class="vendor-icon bg-slate-900 text-white">B</span>Bridge <span class="text-[10px] text-slate-400 font-normal">(一人一VA+Safe)</span>
         </span>
@@ -403,6 +453,8 @@
       </div>
 
 
+</div>
+<div class="matrix-row" data-group="infra" data-row="4" id="row-4">
       <!-- ==================== ROW 04: 闪兑与路由 ==================== -->
       <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
         <span class="text-[10px] font-bold text-indigo-600">04 · LIQUIDITY</span>
@@ -422,7 +474,7 @@
         </span>
       </div>
       <!-- Ether.fi -->
-      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
         <span class="vendor-pill">
           <span class="vendor-icon bg-zinc-900 text-white">EN</span>Enso <span class="text-[10px] text-slate-400 font-normal">(多币种一键兑换)</span>
         </span>
@@ -442,6 +494,8 @@
       </div>
 
 
+</div>
+<div class="matrix-row" data-group="infra" data-row="5" id="row-5">
       <!-- ==================== ROW 05: 理财生息 ==================== -->
       <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
         <span class="text-[10px] font-bold text-indigo-600">05 · DEFI YIELD</span>
@@ -474,7 +528,7 @@
         </span>
       </div>
       <!-- Ether.fi -->
-      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
         <span class="vendor-pill">
           <span class="vendor-icon bg-violet-700 text-white">VD</span>Veda <span class="text-[10px] text-slate-400 font-normal">(金库底座)</span>
         </span>
@@ -509,6 +563,8 @@
       </div>
 
 
+</div>
+<div class="matrix-row" data-group="infra" data-row="6" id="row-6">
       <!-- ==================== ROW 06: 生活生态 ==================== -->
       <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
         <span class="text-[10px] font-bold text-indigo-600">06 · LIFESTYLE</span>
@@ -540,7 +596,7 @@
         </span>
       </div>
       <!-- Ether.fi -->
-      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
         <span class="vendor-pill">
           <span class="vendor-icon bg-blue-600 text-white">ET</span>Entravel
         </span>
@@ -566,6 +622,8 @@
       </div>
 
 
+</div>
+<div class="matrix-row" data-group="infra" data-row="7" id="row-7">
       <!-- ==================== ROW 07: 实物资产 (RWA) ==================== -->
       <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
         <span class="text-[10px] font-bold text-indigo-600">07 · TOKENIZED RWA</span>
@@ -608,7 +666,7 @@
         <span class="vendor-pill"><span class="vendor-icon bg-slate-700 text-white">NF</span>The Network Firm <span class="text-[10px] text-slate-400 font-normal">(储备审计)</span></span>
       </div>
       <!-- Ether.fi -->
-      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
         <span class="vendor-pill">
           <span class="vendor-icon bg-zinc-900 text-white">EN</span>Enso
         </span>
@@ -625,7 +683,7 @@
           <span class="vendor-icon bg-blue-600 text-white">CL</span>Chainlink
         </span>
         <span class="vendor-pill">
-          <span class="vendor-icon bg-sky-600 text-white">SS</span>Sumsub
+          <span class="vendor-icon bg-sky-600 text-white">SS</span>Sumsub <span class="text-[10px] text-slate-400 font-normal">(合作待核)</span>
         </span>
       </div>
       <!-- KAST -->
@@ -643,6 +701,8 @@
       </div>
 
 
+</div>
+<div class="matrix-row" data-group="infra" data-row="8" id="row-8">
       <!-- ==================== ROW 08: 信用借贷 ==================== -->
       <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
         <span class="text-[10px] font-bold text-indigo-600">08 · CREDIT LINE</span>
@@ -654,9 +714,9 @@
       <!-- Bitget -->
       <div class="p-3.5 border-b border-r swiss-grid-border flex items-center justify-center text-slate-300 font-bold text-sm">—</div>
       <!-- Ether.fi -->
-      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
         <span class="vendor-pill">
-          <span class="vendor-icon bg-purple-600 text-white">AA</span>Aave <span class="text-[10px] text-slate-400 font-normal">(V4)</span>
+          <span class="vendor-icon bg-purple-600 text-white">AA</span>Aave <span class="text-[10px] text-slate-400 font-normal">(版本待核)</span>
         </span>
         <span class="vendor-pill">
           <span class="vendor-icon bg-blue-600 text-white">MP</span>Morpho
@@ -672,6 +732,8 @@
       <div class="p-3.5 border-b swiss-grid-border flex items-center justify-center text-slate-300 font-bold text-sm">—</div>
 
 
+</div>
+<div class="matrix-row" data-group="infra" data-row="9" id="row-9">
       <!-- ==================== ROW 09: 非托管架构 ==================== -->
       <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
         <span class="text-[10px] font-bold text-indigo-600">09 · SELF-CUSTODY</span>
@@ -683,7 +745,7 @@
       <!-- Bitget -->
       <div class="p-3.5 border-b border-r swiss-grid-border flex items-center justify-center text-slate-300 font-bold text-sm">—</div>
       <!-- Ether.fi -->
-      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
         <span class="vendor-pill">
           <span class="vendor-icon bg-emerald-500 text-black">SF</span>Gnosis Safe <span class="text-[10px] text-slate-400 font-normal">(合约金库)</span>
         </span>
@@ -693,12 +755,14 @@
         <span class="vendor-pill">
           <span class="vendor-icon bg-sky-500 text-white">R</span>Rain
         </span>
-        <span class="text-[10.5px] font-bold text-indigo-700 ml-0.5">零助记词 · 100%自托管</span>
+        <span class="text-[10.5px] font-bold text-slate-700 ml-0.5">官方称非托管金库；Cash 授权与模块风险另计</span>
       </div>
       <!-- KAST -->
       <div class="p-3.5 border-b swiss-grid-border flex items-center justify-center text-slate-300 font-bold text-sm">—</div>
 
 
+</div>
+<div class="matrix-row" data-group="infra" data-row="10" id="row-10">
       <!-- ==================== ROW 10: 企业账户 ==================== -->
       <div class="p-3.5 bg-slate-50 border-r swiss-grid-border flex flex-col justify-center">
         <span class="text-[10px] font-bold text-indigo-600">10 · ENTERPRISE</span>
@@ -720,7 +784,7 @@
       <!-- Bitget -->
       <div class="p-3.5 border-r swiss-grid-border flex items-center justify-center text-slate-300 font-bold text-sm">—</div>
       <!-- Ether.fi -->
-      <div class="p-3.5 bg-indigo-50/35 border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+      <div class="p-3.5 border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
         <span class="vendor-pill">
           <span class="vendor-icon bg-emerald-500 text-black">SF</span>Gnosis Safe <span class="text-[10px] text-slate-400 font-normal">(多签)</span>
         </span>
@@ -735,19 +799,43 @@
       <div class="p-3.5 flex items-center">
         <span class="text-[11.5px] font-medium text-slate-600">复用个人架构（开设企业独立子账户隔离）</span>
       </div>
+</div>
+<div class="section-banner" data-group="risk"><div><span>PART II · 11–13</span><h2>风控与安全合规体系</h2></div><p>公开披露核查｜区分交易所、钱包、地区实体与具体卡项目</p></div>
+<div class="matrix-row" data-group="risk" data-row="11" id="row-11">
+<div class="dimension-cell"><span class="row-kicker">11 · IDENTITY &amp; AML</span><strong>身份与合规风控</strong><span>KYC / AML / Sanctions</span></div>
+<div class="risk-cell" data-platform="bybit"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">SS</span>Sumsub</span></div><p class="risk-text">证件、活体及地址核验（平台披露） <a class="evidence-link" href="./sources.html#BB-S01" target="_blank" rel="noopener noreferrer">依据 BB-S01 ↗</a> <a class="evidence-link" href="./sources.html#BB-S02" target="_blank" rel="noopener noreferrer">依据 BB-S02 ↗</a></p><p class="scope-note">平台层披露，非所有地区卡片逐项确认。</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">WC</span>LSEG World-Check</span></div><p class="risk-text">制裁 / PEP / 负面新闻筛查 <a class="evidence-link" href="./sources.html#BB-S01" target="_blank" rel="noopener noreferrer">依据 BB-S01 ↗</a></p><p class="scope-note">具体主体为 Bybit Technology Limited 的隐私政策披露。</p></div></div>
+<div class="risk-cell" data-platform="bitget"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">SS</span>Sumsub</span></div><p class="risk-text">身份与活体核验 · 无证件验证 · 深伪识别 <a class="evidence-link" href="./sources.html#BB-S06" target="_blank" rel="noopener noreferrer">依据 BB-S06 ↗</a></p><p class="scope-note">不扩写为已核实 KYB、AML 或 PEP/制裁模块。</p></div></div>
+<div class="risk-cell" data-platform="etherfi"><div class="risk-item"><p class="risk-text">KYC / AML 准入检查；具体供应商本轮未核实 <a class="evidence-link" href="./sources.html#EF-PRIV" target="_blank" rel="noopener noreferrer">依据 EF-PRIV ↗</a></p><p class="scope-note">不把发卡行或法币通道名单等同于身份/AML服务商。</p></div></div>
+<div class="risk-cell" data-platform="kast"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">SS</span>Sumsub</span></div><p class="risk-text">身份验证与筛查合作伙伴；KAST 披露所有用户须完成身份验证 <a class="evidence-link" href="./sources.html#KAST-ABOUT" target="_blank" rel="noopener noreferrer">依据 KAST-ABOUT ↗</a> <a class="evidence-link" href="./sources.html#KAST-X" target="_blank" rel="noopener noreferrer">依据 KAST-X ↗</a></p><p class="scope-note">伙伴关系已披露，具体证件/人脸/活体模块及区域部署未逐项披露。</p></div></div>
+</div>
+<div class="matrix-row" data-group="risk" data-row="12" id="row-12">
+<div class="dimension-cell"><span class="row-kicker">12 · FRAUD &amp; CARD SECURITY</span><strong>交易与欺诈风险管理</strong><span>Fraud / Limits / Monitoring</span></div>
+<div class="risk-cell" data-platform="bybit"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">PO</span>Pomelo</span></div><p class="risk-text">巴西卡：额度/限额控制 · 异常用卡暂停与争议处理 <a class="evidence-link" href="./sources.html#BB-S04" target="_blank" rel="noopener noreferrer">依据 BB-S04 ↗</a></p><p class="scope-note">限所引 Pomelo 巴西发卡条款。</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">NQ</span>Nasdaq</span></div><p class="risk-text">Bybit EU：市场滥用监控（非卡片反欺诈） <a class="evidence-link" href="./sources.html#BB-S03" target="_blank" rel="noopener noreferrer">依据 BB-S03 ↗</a></p><p class="scope-note">仅欧洲实体/市场监控范围，不属于全球卡交易风控。</p></div></div>
+<div class="risk-cell" data-platform="bitget"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">SS</span>Sumsub</span></div><p class="risk-text">伪造证件 / 深伪身份欺诈检测 <a class="evidence-link" href="./sources.html#BB-S06" target="_blank" rel="noopener noreferrer">依据 BB-S06 ↗</a></p><p class="scope-note">属于身份环节，非交易授权防盗刷。</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">SM</span>SlowMist</span></div><p class="risk-text">2026-09 安全事件独立调查 <a class="evidence-link" href="./sources.html#BB-S08" target="_blank" rel="noopener noreferrer">依据 BB-S08 ↗</a></p><p class="scope-note">事件调查合作，不把它称为长期防黑客引擎。</p></div></div>
+<div class="risk-cell" data-platform="etherfi"><div class="risk-item"><p class="risk-text">用户可配置日/月消费限额；Vault 模块与角色权限控制 <a class="evidence-link" href="./sources.html#EF-TECH" target="_blank" rel="noopener noreferrer">依据 EF-TECH ↗</a></p><p class="scope-note">已核实限额及模块控制；未据卡组织品牌推断3DS、Tokenization或MCC规则。</p></div></div>
+<div class="risk-cell" data-platform="kast"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">SA</span>Sardine</span></div><p class="risk-text">反欺诈/实时活动监测合作伙伴（结合 KAST 自研技术） <a class="evidence-link" href="./sources.html#KAST-ABOUT" target="_blank" rel="noopener noreferrer">依据 KAST-ABOUT ↗</a> <a class="evidence-link" href="./sources.html#KAST-X" target="_blank" rel="noopener noreferrer">依据 KAST-X ↗</a></p><p class="scope-note">具体设备指纹、行为分析模块及拦截效果未单独证实。</p></div></div>
+</div>
+<div class="matrix-row" data-group="risk" data-row="13" id="row-13">
+<div class="dimension-cell"><span class="row-kicker">13 · ON-CHAIN RISK</span><strong>链上资产安全风控</strong><span>Monitoring / Audit / Oracle</span></div>
+<div class="risk-cell" data-platform="bybit"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">CA</span>Chainalysis</span><span class="vendor-pill"><span class="vendor-icon">TRM</span>TRM Labs</span><span class="vendor-pill"><span class="vendor-icon">EL</span>Elliptic</span></div><p class="risk-text">链上交易监控（隐私政策披露） <a class="evidence-link" href="./sources.html#BB-S01" target="_blank" rel="noopener noreferrer">依据 BB-S01 ↗</a></p><p class="scope-note">无法据此保证每笔交易或每类地址均被筛查/拦截。</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">BS</span>BlockSec</span></div><p class="risk-text">合约审计 · Phalcon 链上/合约监测 <a class="evidence-link" href="./sources.html#BB-S05" target="_blank" rel="noopener noreferrer">依据 BB-S05 ↗</a></p><p class="scope-note">审计和监测不保证绝对安全。</p></div></div>
+<div class="risk-cell" data-platform="bitget"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">CA</span>Chainalysis</span></div><p class="risk-text">实时交易监控 · 地址预筛查 · 可疑资金调查 <a class="evidence-link" href="./sources.html#BB-S07" target="_blank" rel="noopener noreferrer">依据 BB-S07 ↗</a></p><p class="scope-note">交易所层客户案例；不能据此认定所有卡片或钱包使用相同方案。</p></div></div>
+<div class="risk-cell" data-platform="etherfi"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">CE</span>Certora</span><span class="vendor-pill"><span class="vendor-icon">PA</span>Paladin</span><span class="vendor-pill"><span class="vendor-icon">IM</span>Immunefi</span></div><p class="risk-text">Cash 合约审计 · 公开漏洞赏金 <a class="evidence-link" href="./sources.html#EF-AUDIT" target="_blank" rel="noopener noreferrer">依据 EF-AUDIT ↗</a> <a class="evidence-link" href="./sources.html#IMM-EF" target="_blank" rel="noopener noreferrer">依据 IMM-EF ↗</a></p><p class="scope-note">审计按具体合约及版本适用；不代表实时防御或无漏洞保证。</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">HN</span>Hypernative</span></div><p class="risk-text">核心合约及 weETH 桥实时监测；预设规则可自动触发链上暂停 <a class="evidence-link" href="./sources.html#EF-ACT" target="_blank" rel="noopener noreferrer">依据 EF-ACT ↗</a> <a class="evidence-link" href="./sources.html#EF-SEC" target="_blank" rel="noopener noreferrer">依据 EF-SEC ↗</a></p><p class="scope-note">暂停对象、角色及期限有限；不保证捕获每次攻击，不外推到全部 Cash 支付或第三方资产。</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">CL</span>Chainlink</span></div><p class="risk-text">Borrow 主要抵押资产价格源；参与估值、健康度与清算判断 <a class="evidence-link" href="./sources.html#EF-PRICE" target="_blank" rel="noopener noreferrer">依据 EF-PRICE ↗</a></p><p class="scope-note">用于价格输入；部分抵押资产使用组合价格，不是AML或反欺诈引擎。</p></div></div>
+<div class="risk-cell" data-platform="kast"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">EL</span>Elliptic</span></div><p class="risk-text">链上风险筛查与资金监测伙伴；KAST 披露结合自研系统进行实时监测 <a class="evidence-link" href="./sources.html#KAST-ABOUT" target="_blank" rel="noopener noreferrer">依据 KAST-ABOUT ↗</a> <a class="evidence-link" href="./sources.html#KAST-X" target="_blank" rel="noopener noreferrer">依据 KAST-X ↗</a></p><p class="scope-note">具体产品、阈值与全链覆盖未披露；不保证拦截所有非法资金。</p></div></div>
+</div>
 
     </div>
 
     <!-- 底部页脚注释栏 -->
     <footer class="px-8 py-3 bg-slate-50 border-t border-slate-300 flex items-center justify-between text-[11px] text-slate-500">
-      <div>核心架构分水岭：CEX 托管（Bybit / Bitget）重机构托管与多区本地发卡；非托管 DeFi（Ether.fi）以 Safe + Turnkey + Rain 重构自托管生息支付闭环。</div>
+      <div>核查按产品、地区与主体区分；风控服务、审计及自动响应均不能保证资金无损。官网与 Logo 仅作访问入口。</div>
       <div class="font-semibold text-slate-600">Rivertech Research · Cross-Border Payment & Web3 Card Architecture</div>
     </footer>
 
   </div>
   </div>
 
-  <script src="./logo-assets.js" defer></script>
-  <script src="./vendor-links.js" defer></script>
+  <script src="./matrix-controls.js" defer></script>
+  <script src="./logo-assets.js?v=20261124-2" defer></script>
+  <script src="./vendor-links.js?v=20261124-2" defer></script>
 </body>
 </html>

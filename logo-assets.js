@@ -65,5 +65,18 @@ window.VENDOR_LOGO_ASSETS = {
   "turnkey": "assets/logos/turnkey.png",
   "fireblocks": "assets/logos/fireblocks.png",
   "copper": "assets/logos/copper.svg",
-  "zodia": "assets/logos/zodia.png"
+  "zodia": "assets/logos/zodia.png",
+  "worldcheck": "assets/logos/worldcheck.png",
+  "pomelo": "assets/logos/pomelo.png",
+  "nasdaq": "assets/logos/nasdaq.png",
+  "chainalysis": "assets/logos/chainalysis.png",
+  "trmlabs": "assets/logos/trmlabs.png",
+  "elliptic": "assets/logos/elliptic.png",
+  "blocksec": "assets/logos/blocksec.png",
+  "slowmist": "assets/logos/slowmist.png",
+  "sardine": "assets/logos/sardine.png",
+  "certora": "assets/logos/certora.png",
+  "paladin": "assets/logos/paladin.png",
+  "immunefi": "assets/logos/immunefi.png",
+  "hypernative": "assets/logos/hypernative.png"
 };

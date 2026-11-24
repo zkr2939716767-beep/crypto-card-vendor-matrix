@@ -1,0 +1,164 @@
+[
+  {
+    "key": "worldcheck",
+    "name": "LSEG World-Check",
+    "url": "https://www.lseg.com/en/risk-intelligence/screening-solutions/world-check-kyc-screening",
+    "domain": "lseg.com",
+    "page_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>",
+    "asset": "assets/logos/worldcheck.png",
+    "logo_source": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://lseg.com&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "icon_errors": [
+      "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+    ]
+  },
+  {
+    "key": "pomelo",
+    "name": "Pomelo",
+    "url": "https://pomelo.la/",
+    "domain": "pomelo.la",
+    "page_error": "HTTP Error 403: Forbidden",
+    "status": 403,
+    "asset": "assets/logos/pomelo.png",
+    "logo_source": "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://pomelo.la&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "icon_errors": [
+      "HTTP Error 403: Forbidden"
+    ]
+  },
+  {
+    "key": "nasdaq",
+    "name": "Nasdaq",
+    "url": "https://www.nasdaq.com/",
+    "domain": "nasdaq.com",
+    "status": 200,
+    "final_url": "https://www.nasdaq.com/",
+    "title": "Nasdaq – Listings, Market Data & Financial Technology",
+    "asset": "assets/logos/nasdaq.png",
+    "logo_source": "https://www.nasdaq.com/sites/acquia.prod/files/favicon.ico",
+    "logo_origin": "official-site"
+  },
+  {
+    "key": "chainalysis",
+    "name": "Chainalysis",
+    "url": "https://www.chainalysis.com/",
+    "domain": "chainalysis.com",
+    "status": 200,
+    "final_url": "https://www.chainalysis.com/",
+    "title": "The Blockchain Data Platform - Chainalysis",
+    "asset": "assets/logos/chainalysis.png",
+    "logo_source": "https://www.chainalysis.com/wp-content/themes/chainalysis/static/icon-48x48.png",
+    "logo_origin": "official-site"
+  },
+  {
+    "key": "trmlabs",
+    "name": "TRM Labs",
+    "url": "https://www.trmlabs.com/",
+    "domain": "trmlabs.com",
+    "page_error": "HTTP Error 403: Forbidden",
+    "status": 403,
+    "asset": "assets/logos/trmlabs.png",
+    "logo_source": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://trmlabs.com&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "icon_errors": [
+      "HTTP Error 403: Forbidden"
+    ]
+  },
+  {
+    "key": "elliptic",
+    "name": "Elliptic",
+    "url": "https://www.elliptic.co/",
+    "domain": "elliptic.co",
+    "status": 200,
+    "final_url": "https://www.elliptic.co/",
+    "title": "Blockchain Analytics & Crypto Compliance | Elliptic",
+    "asset": "assets/logos/elliptic.png",
+    "logo_source": "https://www.elliptic.co/apple-touch-icon.png",
+    "logo_origin": "official-site"
+  },
+  {
+    "key": "blocksec",
+    "name": "BlockSec",
+    "url": "https://blocksec.com/",
+    "domain": "blocksec.com",
+    "status": 200,
+    "final_url": "https://blocksec.com/",
+    "title": "Web3 Security Audits, Monitoring, and Risk Prevention | BlockSec",
+    "asset": "assets/logos/blocksec.png",
+    "logo_source": "https://blocksec.com/favicon.ico?bb342bf891959657",
+    "logo_origin": "official-site"
+  },
+  {
+    "key": "slowmist",
+    "name": "SlowMist",
+    "url": "https://www.slowmist.com/",
+    "domain": "slowmist.com",
+    "status": 200,
+    "final_url": "https://cn.slowmist.com/",
+    "title": "慢雾科技(SlowMist) - 专注区块链生态安全",
+    "asset": "assets/logos/slowmist.png",
+    "logo_source": "https://www.slowmist.com/images/favicon.ico",
+    "logo_origin": "official-site"
+  },
+  {
+    "key": "sardine",
+    "name": "Sardine",
+    "url": "https://www.sardine.ai/",
+    "domain": "sardine.ai",
+    "status": 200,
+    "final_url": "https://www.sardine.ai/",
+    "title": "Agentic Financial Crime Platform for Fraud Prevention & AML",
+    "asset": "assets/logos/sardine.png",
+    "logo_source": "https://www.sardine.ai/favicon-180x180.png",
+    "logo_origin": "official-site"
+  },
+  {
+    "key": "certora",
+    "name": "Certora",
+    "url": "https://www.certora.com/",
+    "domain": "certora.com",
+    "status": 200,
+    "final_url": "https://www.certora.com/",
+    "title": "Certora",
+    "asset": "assets/logos/certora.png",
+    "logo_source": "https://www.certora.com/favicon.ico",
+    "logo_origin": "official-site"
+  },
+  {
+    "key": "paladin",
+    "name": "Paladin",
+    "url": "https://paladinsec.co/",
+    "domain": "paladinsec.co",
+    "page_error": "<urlopen error _ssl.c:1064: The handshake operation timed out>",
+    "asset": "assets/logos/paladin.png",
+    "logo_source": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://paladinsec.co&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "icon_errors": [
+      "HTTP Error 404: Not Found"
+    ]
+  },
+  {
+    "key": "immunefi",
+    "name": "Immunefi",
+    "url": "https://immunefi.com/",
+    "domain": "immunefi.com",
+    "status": 200,
+    "final_url": "https://immunefi.com/",
+    "title": "Crypto & Smart Contract Bug Bounty Platform | Immunefi",
+    "asset": "assets/logos/immunefi.png",
+    "logo_source": "https://immunefi.com/apple-touch-icon.png",
+    "logo_origin": "official-site"
+  },
+  {
+    "key": "hypernative",
+    "name": "Hypernative",
+    "url": "https://www.hypernative.io/",
+    "domain": "hypernative.io",
+    "status": 200,
+    "final_url": "https://www.hypernative.io/",
+    "title": "Proactive Onchain Security for Enterprises | Hypernative",
+    "asset": "assets/logos/hypernative.png",
+    "logo_source": "https://cdn.prod.website-files.com/69d4d6fc998dbd876edc5b20/6a269034a38f01f05a60de5c_webclip.png",
+    "logo_origin": "official-site"
+  }
+]
