@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Card Ecosystem & Infrastructure Vendor Matrix (2026)</title>
+  <link rel="stylesheet" href="./assets/tailwind.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #E2E8F0;
+      color: #0F172A;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .swiss-grid-border {
+      border-color: #CBD5E1;
+    }
+    .vendor-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px 3px 5px;
+      border-radius: 6px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #0F172A;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .vendor-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 800;
+      flex-shrink: 0;
+      letter-spacing: -0.03em;
+    }
+    .vendor-pill {
+      color: inherit;
+      text-decoration: none;
+      transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+    }
+    a.vendor-pill:hover,
+    .logo-only-link:hover .logo-box {
+      border-color: #4F46E5;
+      background-color: #F8FAFF;
+      box-shadow: 0 3px 8px rgba(79, 70, 229, 0.14);
+      transform: translateY(-1px);
+    }
+    .logo-box {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      background: #F8FAFC;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+    .logo-box img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 2px;
+      object-fit: contain;
+    }
+    .header-logo-box img { width: 100%; height: 100%; padding: 4px; object-fit: contain; }
+    .vendor-note { font-size: 10px; color: #64748B; font-weight: 500; }
+    .vendor-pair-pill { border-style: dashed; }
+    @media (prefers-reduced-motion: reduce) { .vendor-pill { transition: none; } }
+    @media (max-width: 700px) {
+      #control-bar { flex-direction: column; align-items: flex-start; gap: 12px; }
+      #control-bar > .flex:first-child { flex-wrap: wrap; }
+    }
+    .logo-box img[hidden], .header-logo-box img[hidden] { display: none !important; }
+    .logo-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8.5px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .logo-fallback[hidden] { display: none; }
+    .logo-only-link {
+      display: inline-flex;
+      flex: 0 0 auto;
+      text-decoration: none;
+    }
+    .vendor-heading-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: inherit;
+      text-decoration: none;
+    }
+    .header-logo-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+    }
+    .header-logo-box .logo-fallback { font-size: 10px; }
+    .vendor-heading-link:hover .header-logo-box { border-color: #4F46E5; }
+    .vendor-pill:focus-visible,
+    .logo-only-link:focus-visible,
+    .vendor-heading-link:focus-visible {
+      outline: 2px solid #4F46E5;
+      outline-offset: 2px;
+    }
+    body.icon-only .vendor-name { display: none; }
+    body.icon-only .vendor-pill { padding: 4px 6px; gap: 4px; }
+    body.icon-only .logo-box { width: 22px; height: 22px; border-radius: 5px; }
+    #control-bar { width: min(1560px, calc(100vw - 32px)); overflow-x: auto; }
+    #poster-scroll { width: min(1560px, calc(100vw - 32px)); overflow-x: auto; overscroll-behavior-x: contain; }
+    #poster-canvas { width: 1560px; }
+    .micro-tag {
+      font-size: 11px;
+      color: #475569;
+      font-weight: 500;
+    }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #FFFFFF; }
+    }
+  </style>
+</head>
+<body class="py-8 px-4 flex flex-col items-center">
+
+  <!-- 悬浮控制栏（截图时可一键隐藏） -->
+  <div id="control-bar" class="no-print mb-4 flex items-center justify-between bg-slate-900 text-white px-5 py-2.5 rounded-lg shadow-md text-xs">
+    <div class="flex items-center gap-3">
+      <span class="px-2 py-0.5 bg-indigo-500 rounded font-semibold">4K 研报导出模式</span>
+      <span>提示：按 <b>Cmd+Option+I</b> 打开控制台 → <b>Cmd+Shift+P</b> 输入 <b>Capture full size screenshot</b> 即可导出超清 PNG</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <button id="toggle-mode-btn" onclick="toggleIconMode()" aria-pressed="false" class="px-3 py-1 bg-indigo-600 hover:bg-indigo-500 rounded text-white font-medium transition">
+        纯 Logo 模式
+      </button>
+      <button onclick="document.getElementById('control-bar').style.display='none'" class="px-3 py-1 bg-slate-700 hover:bg-slate-600 rounded text-white font-medium transition">
+        隐藏此提示栏以便截图
+      </button>
+    </div>
+  </div>
+
+  <!-- 主画布：1560px 瑞士网格海报容器 -->
+  <div id="poster-scroll" role="region" aria-label="合作商矩阵，横向滚动查看全部平台" tabindex="0">
+  <div id="poster-canvas" class="w-[1560px] bg-white border border-slate-300 shadow-xl overflow-hidden">
+    
+    <!-- 顶部瑞士风格标题栏 -->
+    <header class="px-8 py-6 border-b-2 border-slate-900 flex items-end justify-between bg-white">
+      <div>
+        <div class="flex items-center gap-2.5 mb-1.5">
+          <span class="inline-block w-2.5 h-2.5 bg-indigo-600"></span>
+          <span class="text-xs font-bold uppercase tracking-widest text-slate-500">GLOBAL CRYPTO CARD INFRASTRUCTURE BENCHMARK · 2026</span>
+        </div>
+        <h1 class="text-[28px] font-extrabold tracking-tight text-slate-900 leading-none">
+          加密卡生态与底层供应商全景对照表
+          <span class="text-slate-400 font-semibold text-xl ml-2">Bybit vs. Bitget vs. Ether.fi vs. KAST</span>
+        </h1>
+      </div>
+      <div class="text-right">
+        <p class="text-xs font-semibold text-slate-700">发卡通道 · 法币VA · 路由生息 · RWA与非托管架构横向拆解</p>
+        <p class="text-[11px] text-slate-400 mt-0.5">Architecture & Vendor Stack Matrix · Swiss Typographic Grid</p>
+      </div>
+    </header>
+
+    <!-- 5列 x 11行（含表头）核心网格表格 -->
+    <div class="grid grid-cols-[210px_1fr_1fr_1.08fr_1fr]">
+
+      <!-- ==================== 表头行 ==================== -->
+      <div class="p-4 bg-slate-100 border-b border-r swiss-grid-border flex flex-col justify-center">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">DIMENSION</span>
+        <span class="text-sm font-extrabold text-slate-800 mt-0.5">业务模块与架构层</span>
+      </div>
+
+      <!-- Col 2: Bybit -->
+      <div class="p-4 bg-white border-b border-r swiss-grid-border flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-lg bg-slate-950 flex items-center justify-center font-black text-white text-sm tracking-tighter">
+            BYB<span class="text-amber-400">I</span>T
+          </div>
+          <div>
+            <div class="text-base font-extrabold text-slate-900 leading-tight">Bybit Card</div>
+            <div class="text-[11px] font-medium text-slate-500">CEX 托管模式 · 全球多区域发卡</div>
+          </div>
+        </div>
+        <span class="px-2 py-0.5 text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200 rounded">CeFi Exchange</span>
+      </div>
+
+      <!-- Col 3: Bitget -->
+      <div class="p-4 bg-white border-b border-r swiss-grid-border flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center">
+            <svg class="w-5 h-5 text-cyan-400" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 3L6 10.5l4.5 4.5L7.5 18l3 3 7.5-7.5-4.5-4.5L16.5 6l-3-3z"/></svg>
+          </div>
+          <div>
+            <div class="text-base font-extrabold text-slate-900 leading-tight">Bitget Card / Wallet</div>
+            <div class="text-[11px] font-medium text-slate-500">CEX 托管 + Web3 钱包混合</div>
+          </div>
+        </div>
+        <span class="px-2 py-0.5 text-[10px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200 rounded">Hybrid CEX+Wallet</span>
+      </div>
+
+      <!-- Col 4: Ether.fi (高亮主推列) -->
+      <div class="p-4 bg-indigo-50/70 border-b border-r swiss-grid-border flex items-center justify-between relative">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-indigo-600"></div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-white font-extrabold text-sm shadow-sm">
+            e.fi
+          </div>
+          <div>
+            <div class="text-base font-extrabold text-indigo-950 leading-tight">ether.fi Cash</div>
+            <div class="text-[11px] font-semibold text-indigo-700">非托管合约金库 · 链上生息直刷</div>
+          </div>
+        </div>
+        <span class="px-2 py-0.5 text-[10px] font-bold bg-indigo-600 text-white rounded">Non-Custodial DeFi</span>
+      </div>
+
+      <!-- Col 5: KAST -->
+      <div class="p-4 bg-white border-b swiss-grid-border flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-lg bg-zinc-950 flex items-center justify-center font-black text-lime-400 text-base">
+            K
+          </div>
+          <div>
+            <div class="text-base font-extrabold text-slate-900 leading-tight">KAST Card</div>
+            <div class="text-[11px] font-medium text-slate-500">稳定币新银行 · 账户制托管</div>
+          </div>
+        </div>
+        <span class="px-2 py-0.5 text-[10px] font-bold bg-lime-50 text-lime-800 border border-lime-300 rounded">Stablecoin Neobank</span>
+      </div>
+
+
+      <!-- ==================== ROW 01: 费率与返现 ==================== -->
+      <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
+        <span class="text-[10px] font-bold text-indigo-600">01 · ECONOMICS</span>
+        <span class="text-xs font-bold text-slate-900 mt-0.5">费率与返现</span>
+        <span class="text-[10.5px] text-slate-400">Fee & Cashback</span>
+      </div>
+      <!-- Bybit -->
+      <div class="p-3.5 border-b border-r swiss-grid-border text-[11.5px] leading-relaxed space-y-1">
+        <div><span class="font-bold text-slate-800">费率：</span>0年费｜ATM超额 <span class="font-semibold text-slate-900">2%</span></div>
+        <div><span class="font-bold text-slate-800">FX/闪兑：</span>FX 0.5%–2%｜闪兑 0.5%–3%</div>
+        <div><span class="font-bold text-slate-800">返现：</span>阶梯 <span class="font-semibold text-amber-700">2%–10%</span>（上限 $50–$600/月）</div>
+        <div><span class="font-bold text-slate-800">拉新：</span>双边最高 250U + 20%–30% 返佣</div>
+      </div>
+      <!-- Bitget -->
+      <div class="p-3.5 border-b border-r swiss-grid-border text-[11.5px] leading-relaxed space-y-1">
+        <div><span class="font-bold text-slate-800">费率：</span>0年费｜ATM <span class="font-semibold text-slate-900">1%</span>（亚太）</div>
+        <div><span class="font-bold text-slate-800">FX/闪兑：</span>非美 1.7%｜闪兑 0.05%–0.2%</div>
+        <div><span class="font-bold text-slate-800">返现：</span><span class="font-semibold text-cyan-700">2%–3%</span>（T+8，上限 $400/月）</div>
+        <div><span class="font-bold text-slate-800">拉新：</span>开卡奖 + 消费 0.1%–0.2% 持续分佣</div>
+      </div>
+      <!-- Ether.fi -->
+      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border text-[11.5px] leading-relaxed space-y-1">
+        <div><span class="font-bold text-indigo-950">费率：</span>Core免费｜Luxe $199｜Pinnacle $999</div>
+        <div><span class="font-bold text-indigo-950">FX：</span>欧美 <span class="font-bold text-emerald-700">0%</span>｜非美 1%–1.5%｜ATM限$25k/日</div>
+        <div><span class="font-bold text-indigo-950">返现：</span><span class="font-bold text-indigo-700">≥3% ETHFI</span>｜订阅返现 10%–30%</div>
+        <div><span class="font-bold text-indigo-950">拉新：</span>邀友消费满$100奖$10 + 终身消费分润</div>
+      </div>
+      <!-- KAST -->
+      <div class="p-3.5 border-b swiss-grid-border text-[11.5px] leading-relaxed space-y-1">
+        <div><span class="font-bold text-slate-800">费率：</span>0开卡费｜年费 $0–$10,000（三档）</div>
+        <div><span class="font-bold text-slate-800">FX：</span>银行汇率 + 点差（未披露具体值）</div>
+        <div><span class="font-bold text-slate-800">返现：</span><span class="font-semibold text-lime-700">Interchange</span> 商户手续费分成返现</div>
+        <div><span class="font-bold text-slate-800">取现：</span>单日最高 $750（合作行收手续费）</div>
+      </div>
+
+
+      <!-- ==================== ROW 02: 卡组与发卡行 ==================== -->
+      <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
+        <span class="text-[10px] font-bold text-indigo-600">02 · CARD ISSUING</span>
+        <span class="text-xs font-bold text-slate-900 mt-0.5">卡组与发卡行</span>
+        <span class="text-[10.5px] text-slate-400">Network & Issuer</span>
+      </div>
+      <!-- Bybit -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-900 text-white">V</span>VISA
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-red-600 text-amber-300">M</span>Mastercard
+        </span>
+        <span class="micro-tag">+ 多地区第三方发卡合作模式</span>
+      </div>
+      <!-- Bitget -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-900 text-white">V</span>VISA
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-red-600 text-amber-300">M</span>Mastercard
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-purple-700 text-white">IM</span>Immersve
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-emerald-700 text-white">DC</span>DCS
+        </span>
+      </div>
+      <!-- Ether.fi -->
+      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-900 text-white">V</span>VISA
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-slate-800 text-white">3N</span>Third National <span class="text-[10px] text-slate-400 font-normal">(主力)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-sky-500 text-white">R</span>Rain <span class="text-[10px] text-slate-400 font-normal">(发卡底座)</span>
+        </span>
+      </div>
+      <!-- KAST -->
+      <div class="p-3.5 border-b swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-900 text-white">V</span>VISA
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-sky-500 text-white">R</span>Rain <span class="text-[10px] text-slate-400 font-normal">(发卡底座)</span>
+        </span>
+        <span class="vendor-pill border-dashed">
+          <span class="vendor-icon bg-indigo-600 text-white">S</span>Bridge / Stripe <span class="text-[10px] text-slate-400 font-normal">(疑似)</span>
+        </span>
+      </div>
+
+
+      <!-- ==================== ROW 03: 法币出入金 (VA) ==================== -->
+      <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
+        <span class="text-[10px] font-bold text-indigo-600">03 · FIAT RAILS</span>
+        <span class="text-xs font-bold text-slate-900 mt-0.5">法币出入金 (VA)</span>
+        <span class="text-[10.5px] text-slate-400">VA & Fiat Settlement</span>
+      </div>
+      <!-- Bybit -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-600 text-white">OP</span>OpenPayd <span class="text-[10px] text-slate-400 font-normal">(vIBAN/SWIFT)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-teal-700 text-white">PB</span>Pave Bank <span class="text-[10px] text-slate-400 font-normal">(IBAN清算)</span>
+        </span>
+      </div>
+      <!-- Bitget -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-neutral-900 text-white">N</span>Noah <span class="text-[10px] text-slate-400 font-normal">(USD/EUR VA · 仅入金)</span>
+        </span>
+      </div>
+      <!-- Ether.fi -->
+      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-slate-900 text-white">B</span>Bridge <span class="text-[10px] text-slate-400 font-normal">(一人一VA+Safe)</span>
+        </span>
+        <span class="micro-tag">备选：</span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-violet-600 text-white">D</span>Due
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-purple-600 text-white">MP</span>MoonPay
+        </span>
+      </div>
+      <!-- KAST -->
+      <div class="p-3.5 border-b swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-700 text-white">BG</span>BitGo <span class="text-[10px] text-slate-400 font-normal">(托管)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-indigo-600 text-white">PV</span>Privy <span class="text-[10px] text-slate-400 font-normal">(MPC)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-emerald-800 text-white">LB</span>Lead Bank
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-slate-900 text-white">B</span>Bridge <span class="text-[10px] text-slate-400 font-normal">(USD)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-neutral-900 text-white">N</span>Noah <span class="text-[10px] text-slate-400 font-normal">(EUR)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-teal-600 text-white">TZ</span>Tazapay
+        </span>
+      </div>
+
+
+      <!-- ==================== ROW 04: 闪兑与路由 ==================== -->
+      <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
+        <span class="text-[10px] font-bold text-indigo-600">04 · LIQUIDITY</span>
+        <span class="text-xs font-bold text-slate-900 mt-0.5">闪兑与路由</span>
+        <span class="text-[10.5px] text-slate-400">Swap & Routing</span>
+      </div>
+      <!-- Bybit -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-500 text-white">SW</span>SWFT Blockchain <span class="text-[10px] text-slate-400 font-normal">(跨链兑换)</span>
+        </span>
+      </div>
+      <!-- Bitget -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-violet-700 text-white">UZ</span>Unizen <span class="text-[10px] text-slate-400 font-normal">(聚合路由 · 0–1.3%)</span>
+        </span>
+      </div>
+      <!-- Ether.fi -->
+      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-zinc-900 text-white">EN</span>Enso <span class="text-[10px] text-slate-400 font-normal">(多币种一键兑换)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-orange-600 text-white">RW</span>Reown <span class="text-[10px] text-slate-400 font-normal">(多钱包绑定)</span>
+        </span>
+      </div>
+      <!-- KAST -->
+      <div class="p-3.5 border-b swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-indigo-600 text-white">PV</span>Privy <span class="text-[10px] text-slate-400 font-normal">(签名)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-fuchsia-600 text-white">LI</span>LI.FI <span class="text-[10px] text-slate-400 font-normal">(跨链路由)</span>
+        </span>
+        <span class="micro-tag">+ DEX 流动性池</span>
+      </div>
+
+
+      <!-- ==================== ROW 05: 理财生息 ==================== -->
+      <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
+        <span class="text-[10px] font-bold text-indigo-600">05 · DEFI YIELD</span>
+        <span class="text-xs font-bold text-slate-900 mt-0.5">理财生息</span>
+        <span class="text-[10.5px] text-slate-400">Earn & Vaults</span>
+      </div>
+      <!-- Bybit -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-emerald-600 text-white">MT</span>Mantle <span class="text-[10px] text-slate-400 font-normal">(公链)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-purple-600 text-white">AA</span>Aave
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-emerald-800 text-white">CI</span>CIAN <span class="text-[10px] text-slate-400 font-normal">(策略)</span>
+        </span>
+      </div>
+      <!-- Bitget -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="micro-tag w-full text-[10.5px] font-semibold text-slate-600">Stablecoin Earn Plus：</span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-purple-600 text-white">AA</span>Aave
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-amber-500 text-white">VN</span>Venus
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-sky-600 text-white">KM</span>Kamino <span class="text-[10px] text-slate-400 font-normal">(策略)</span>
+        </span>
+      </div>
+      <!-- Ether.fi -->
+      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-violet-700 text-white">VD</span>Veda <span class="text-[10px] text-slate-400 font-normal">(金库底座)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-slate-900 text-white">GL</span>Gauntlet
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-zinc-700 text-white">NC</span>Nonce Capital
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-purple-600 text-white">AA</span>Aave
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-600 text-white">MP</span>Morpho
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-teal-600 text-white">PD</span>Pendle
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-rose-600 text-white">CV</span>Curve
+        </span>
+      </div>
+      <!-- KAST -->
+      <div class="p-3.5 border-b swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="micro-tag w-full text-[10.5px] font-semibold text-slate-600">Gauntlet Alpha Vault (Base, 最高7%)：</span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-slate-900 text-white">GL</span>Gauntlet
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-indigo-600 text-white">PV</span>Privy
+        </span>
+      </div>
+
+
+      <!-- ==================== ROW 06: 生活生态 ==================== -->
+      <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
+        <span class="text-[10px] font-bold text-indigo-600">06 · LIFESTYLE</span>
+        <span class="text-xs font-bold text-slate-900 mt-0.5">生活生态</span>
+        <span class="text-[10.5px] text-slate-400">Life & Perks</span>
+      </div>
+      <!-- Bybit -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-amber-700 text-white">GM</span>Grand Millennium
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-600 text-white">ET</span>Entravel
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-slate-800 text-white">PP</span>Plaza Premium <span class="text-[10px] text-slate-400 font-normal">(贵宾厅)</span>
+        </span>
+      </div>
+      <!-- Bitget -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-600 text-white">ET</span>Entravel <span class="text-[10px] text-slate-400 font-normal">(酒店)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-rose-500 text-white">TL</span>Tillo <span class="text-[10px] text-slate-400 font-normal">(礼品卡)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-emerald-600 text-white">RL</span>Reloadly <span class="text-[10px] text-slate-400 font-normal">(话费)</span>
+        </span>
+      </div>
+      <!-- Ether.fi -->
+      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-600 text-white">ET</span>Entravel
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-sky-600 text-white">TC</span>Trip.com
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-red-600 text-white">DP</span>DragonPass <span class="text-[10px] text-slate-400 font-normal">(贵宾厅)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-cyan-600 text-white">GS</span>GigSky <span class="text-[10px] text-slate-400 font-normal">(eSIM)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-900 text-white">AX</span>AXA <span class="text-[10px] text-slate-400 font-normal">(保险)</span>
+        </span>
+      </div>
+      <!-- KAST -->
+      <div class="p-3.5 border-b swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-lime-500 text-black">KP</span>KAST Points <span class="text-[10px] text-slate-400 font-normal">(积分代币化)</span>
+        </span>
+        <span class="micro-tag">+ Web3 IP 联名卡</span>
+      </div>
+
+
+      <!-- ==================== ROW 07: 实物资产 (RWA) ==================== -->
+      <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
+        <span class="text-[10px] font-bold text-indigo-600">07 · TOKENIZED RWA</span>
+        <span class="text-xs font-bold text-slate-900 mt-0.5">实物资产 (RWA)</span>
+        <span class="text-[10.5px] text-slate-400">Stocks, Gold & T-Bills</span>
+      </div>
+      <!-- Bybit -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-rose-600 text-white">PL</span>Plume
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-700 text-white">DF</span>DigiFT
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-slate-800 text-white">PM</span>PIMCO
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-red-700 text-white">CM</span>CMBI
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-950 text-white">SS</span>State Street
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-red-800 text-white">CW</span>CMB Wing Lung
+        </span>
+      </div>
+      <!-- Bitget -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-amber-400 text-black">AL</span>Alpaca <span class="text-[10px] text-slate-400 font-normal">(Reality美股)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-slate-900 text-white">ON</span>Ondo Finance
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-emerald-600 text-white">xS</span>xStocks <span class="text-[10px] text-slate-400 font-normal">(Backed)</span>
+        </span>
+        <span class="micro-tag">+</span>
+        <span class="vendor-pill"><span class="vendor-icon bg-slate-700 text-white">NF</span>The Network Firm <span class="text-[10px] text-slate-400 font-normal">(储备审计)</span></span>
+      </div>
+      <!-- Ether.fi -->
+      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-zinc-900 text-white">EN</span>Enso
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-emerald-600 text-white">xS</span>xStocks
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-amber-500 text-white">PX</span>Paxos <span class="text-[10px] text-slate-400 font-normal">(黄金)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-purple-700 text-white">PY</span>Pyth
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-600 text-white">CL</span>Chainlink
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-sky-600 text-white">SS</span>Sumsub
+        </span>
+      </div>
+      <!-- KAST -->
+      <div class="p-3.5 border-b swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="micro-tag w-full text-[10.5px] font-semibold text-slate-600">USD Prime Vault (美债, 最高3.3%)：</span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-neutral-900 text-white">M0</span>M0 <span class="text-[10px] text-slate-400 font-normal">(USDK/USDKy)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-emerald-700 text-white">CH</span>Chronicle <span class="text-[10px] text-slate-400 font-normal">(校验)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-slate-900 text-white">GL</span>Gauntlet
+        </span>
+      </div>
+
+
+      <!-- ==================== ROW 08: 信用借贷 ==================== -->
+      <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
+        <span class="text-[10px] font-bold text-indigo-600">08 · CREDIT LINE</span>
+        <span class="text-xs font-bold text-slate-900 mt-0.5">信用借贷</span>
+        <span class="text-[10.5px] text-slate-400">Borrow / Buy Later</span>
+      </div>
+      <!-- Bybit -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex items-center justify-center text-slate-300 font-bold text-sm">—</div>
+      <!-- Bitget -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex items-center justify-center text-slate-300 font-bold text-sm">—</div>
+      <!-- Ether.fi -->
+      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-purple-600 text-white">AA</span>Aave <span class="text-[10px] text-slate-400 font-normal">(V4)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-600 text-white">MP</span>Morpho
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-purple-700 text-white">PY</span>Pyth <span class="text-[10px] text-slate-400 font-normal">(喂价)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-sky-500 text-white">R</span>Rain <span class="text-[10px] text-slate-400 font-normal">(扣款)</span>
+        </span>
+      </div>
+      <!-- KAST -->
+      <div class="p-3.5 border-b swiss-grid-border flex items-center justify-center text-slate-300 font-bold text-sm">—</div>
+
+
+      <!-- ==================== ROW 09: 非托管架构 ==================== -->
+      <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
+        <span class="text-[10px] font-bold text-indigo-600">09 · SELF-CUSTODY</span>
+        <span class="text-xs font-bold text-slate-900 mt-0.5">非托管架构</span>
+        <span class="text-[10.5px] text-slate-400">Non-Custodial Stack</span>
+      </div>
+      <!-- Bybit -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex items-center justify-center text-slate-300 font-bold text-sm">—</div>
+      <!-- Bitget -->
+      <div class="p-3.5 border-b border-r swiss-grid-border flex items-center justify-center text-slate-300 font-bold text-sm">—</div>
+      <!-- Ether.fi -->
+      <div class="p-3.5 bg-indigo-50/35 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-emerald-500 text-black">SF</span>Gnosis Safe <span class="text-[10px] text-slate-400 font-normal">(合约金库)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-slate-900 text-white">TK</span>Turnkey <span class="text-[10px] text-slate-400 font-normal">(Passkey)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-sky-500 text-white">R</span>Rain
+        </span>
+        <span class="text-[10.5px] font-bold text-indigo-700 ml-0.5">零助记词 · 100%自托管</span>
+      </div>
+      <!-- KAST -->
+      <div class="p-3.5 border-b swiss-grid-border flex items-center justify-center text-slate-300 font-bold text-sm">—</div>
+
+
+      <!-- ==================== ROW 10: 企业账户 ==================== -->
+      <div class="p-3.5 bg-slate-50 border-r swiss-grid-border flex flex-col justify-center">
+        <span class="text-[10px] font-bold text-indigo-600">10 · ENTERPRISE</span>
+        <span class="text-xs font-bold text-slate-900 mt-0.5">企业账户</span>
+        <span class="text-[10.5px] text-slate-400">Business Account</span>
+      </div>
+      <!-- Bybit -->
+      <div class="p-3.5 border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-blue-600 text-white">FB</span>Fireblocks <span class="text-[10px] text-slate-400 font-normal">(MPC)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-orange-500 text-white">CP</span>Copper
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-slate-900 text-white">ZD</span>Zodia Custody
+        </span>
+      </div>
+      <!-- Bitget -->
+      <div class="p-3.5 border-r swiss-grid-border flex items-center justify-center text-slate-300 font-bold text-sm">—</div>
+      <!-- Ether.fi -->
+      <div class="p-3.5 bg-indigo-50/35 border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-emerald-500 text-black">SF</span>Gnosis Safe <span class="text-[10px] text-slate-400 font-normal">(多签)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-sky-500 text-white">R</span>Rain <span class="text-[10px] text-slate-400 font-normal">(企业卡)</span>
+        </span>
+        <span class="vendor-pill">
+          <span class="vendor-icon bg-slate-900 text-white">B</span>Bridge <span class="text-[10px] text-slate-400 font-normal">(企业VA)</span>
+        </span>
+      </div>
+      <!-- KAST -->
+      <div class="p-3.5 flex items-center">
+        <span class="text-[11.5px] font-medium text-slate-600">复用个人架构（开设企业独立子账户隔离）</span>
+      </div>
+
+    </div>
+
+    <!-- 底部页脚注释栏 -->
+    <footer class="px-8 py-3 bg-slate-50 border-t border-slate-300 flex items-center justify-between text-[11px] text-slate-500">
+      <div>核心架构分水岭：CEX 托管（Bybit / Bitget）重机构托管与多区本地发卡；非托管 DeFi（Ether.fi）以 Safe + Turnkey + Rain 重构自托管生息支付闭环。</div>
+      <div class="font-semibold text-slate-600">Rivertech Research · Cross-Border Payment & Web3 Card Architecture</div>
+    </footer>
+
+  </div>
+  </div>
+
+  <script src="./logo-assets.js" defer></script>
+  <script src="./vendor-links.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,471 @@
+[
+  {
+    "name": "Bybit Card",
+    "url": "https://www.bybit.com/en/cards/",
+    "logo_source": "https://www.bybit.com/favicon.ico",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/bybit.png"
+  },
+  {
+    "name": "Bitget Card",
+    "url": "https://www.bitget.com/cards",
+    "logo_source": "https://www.bitget.com/baseasset/favicon4.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/bitget.png"
+  },
+  {
+    "name": "ether.fi Cash",
+    "url": "https://www.ether.fi/cash",
+    "logo_source": "https://www.ether.fi/images/favicon/apple-touch-icon-120x120.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/etherfi.png"
+  },
+  {
+    "name": "KAST",
+    "url": "https://www.kast.xyz/",
+    "logo_source": "https://www.kast.xyz/favicon.ico?favicon.0-vhlmo6fl0-5.ico",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/kast.png"
+  },
+  {
+    "name": "VISA",
+    "url": "https://www.visa.com/",
+    "logo_source": "https://www.visa.com.hk/content/dam/VCOM/Brand/favicon.ico",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/visa.png"
+  },
+  {
+    "name": "Mastercard",
+    "url": "https://www.mastercard.com/",
+    "logo_source": "https://www.mastercard.com/etc.clientlibs/marts/clientlibs/clientlib-site/resources/icons/mastercard-apple-touch-icon.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/mastercard.png"
+  },
+  {
+    "name": "Immersve",
+    "url": "https://immersve.com/",
+    "logo_source": "https://cdn.prod.website-files.com/6a804ebb2c9ba876235d6f81/6aececc1c0537d36c27e2e90_immersve-mark.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/immersve.png"
+  },
+  {
+    "name": "DCS Card Centre",
+    "url": "https://dcscc.com/",
+    "logo_source": "https://dcscc.com/dcscc/favicon/apple-touch-icon.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/dcs.png"
+  },
+  {
+    "name": "Third National",
+    "url": "https://www.nimbuslending.com/",
+    "logo_source": "https://cdn.prod.website-files.com/681e2d383788c325f7709712/681f8b9e6ffe7910ab7771c1_Webclip.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/thirdnational.png"
+  },
+  {
+    "name": "Rain",
+    "url": "https://www.rain.xyz/",
+    "logo_source": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://rain.xyz&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/rain.png"
+  },
+  {
+    "name": "Bridge",
+    "url": "https://www.bridge.xyz/",
+    "logo_source": "https://cdn.prod.website-files.com/66c78bffc753432b33c4f61a/6aa83ed16f3009c48966f9f8_bridge-logo-favicon.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/bridge.png"
+  },
+  {
+    "name": "Stripe",
+    "url": "https://stripe.com/",
+    "logo_source": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=180&h=180",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/stripe.png"
+  },
+  {
+    "name": "OpenPayd",
+    "url": "https://www.openpayd.com/",
+    "logo_source": "https://www.openpayd.com/wp-content/uploads/2025/05/openpayd-icon-300x300.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/openpayd.png"
+  },
+  {
+    "name": "Pave Bank",
+    "url": "https://www.pavebank.com/",
+    "logo_source": "https://pavebank.com/icon-4usi79.png?9aaadba807441385",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/pavebank.png"
+  },
+  {
+    "name": "Noah",
+    "url": "https://noah.com/",
+    "logo_source": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://noah.com&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/noah.png"
+  },
+  {
+    "name": "Due",
+    "url": "https://www.opendue.com/",
+    "logo_source": "https://cdn.prod.website-files.com/65035c417fe69396bd8c0d5c/6543e3ffbd62e51056b43e42_touch-icon.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/due.png"
+  },
+  {
+    "name": "MoonPay",
+    "url": "https://www.moonpay.com/",
+    "logo_source": "https://www.moonpay.com/apple-icon.png?apple-icon.3-x6slck8t5jo.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/moonpay.png"
+  },
+  {
+    "name": "BitGo",
+    "url": "https://www.bitgo.com/",
+    "logo_source": "https://www.bitgo.com/static/img/apple-touch-icon.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/bitgo.png"
+  },
+  {
+    "name": "Privy",
+    "url": "https://www.privy.io/",
+    "logo_source": "https://framerusercontent.com/images/oPqxoNxeHrQ9qgbjTUGuANdXdQ.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/privy.png"
+  },
+  {
+    "name": "Lead Bank",
+    "url": "https://www.lead.bank/",
+    "logo_source": "https://cdn.prod.website-files.com/6a429b8696dc4bb7b48e6a4b/6a44277eaf1d19ee4a1febae_Lead%20Favicon.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/leadbank.png"
+  },
+  {
+    "name": "Tazapay",
+    "url": "https://tazapay.com/",
+    "logo_source": "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://tazapay.com&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/tazapay.png"
+  },
+  {
+    "name": "SWFT Blockchain",
+    "url": "https://www.swft.pro/",
+    "logo_source": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://swft.pro&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/swft.png"
+  },
+  {
+    "name": "Unizen",
+    "url": "https://www.unizen.io/",
+    "logo_source": "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://unizen.io&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/unizen.png"
+  },
+  {
+    "name": "Enso",
+    "url": "https://www.enso.build/",
+    "logo_source": "https://framerusercontent.com/images/2KUuit0T2LVm4BJXknglk4dT4o.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/enso.png"
+  },
+  {
+    "name": "Reown",
+    "url": "https://reown.com/",
+    "logo_source": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://reown.com&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/reown.png"
+  },
+  {
+    "name": "LI.FI",
+    "url": "https://li.fi/",
+    "logo_source": "https://framerusercontent.com/images/qaMImANIDMfsz5uKFRTTXjZ1g4c.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/lifi.png"
+  },
+  {
+    "name": "Mantle",
+    "url": "https://www.mantle.xyz/",
+    "logo_source": "https://www.mantle.xyz/favicon.ico",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/mantle.png"
+  },
+  {
+    "name": "Aave",
+    "url": "https://aave.com/",
+    "logo_source": "https://aave.com/favicon.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/aave.png"
+  },
+  {
+    "name": "CIAN",
+    "url": "https://cian.app/",
+    "logo_source": "https://cian.app/favicon.ico",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/cian.png"
+  },
+  {
+    "name": "Venus",
+    "url": "https://venus.io/",
+    "logo_source": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://venus.io&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/venus.png"
+  },
+  {
+    "name": "Kamino",
+    "url": "https://kamino.finance/",
+    "logo_source": "https://kamino.com/favicon.ico",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/kamino.png"
+  },
+  {
+    "name": "Veda",
+    "url": "https://veda.tech/",
+    "logo_source": "https://cdn.prod.website-files.com/68271570945b21be587338d0/6ab3f14f8c0fa3aecefa0d36_veda_favicon.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/veda.png"
+  },
+  {
+    "name": "Gauntlet",
+    "url": "https://www.gauntlet.xyz/",
+    "logo_source": "https://cdn.prod.website-files.com/648bdc0d4b8ce322f27da0af/64c1943b62e9fb88c3887f02_Dark.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/gauntlet.png"
+  },
+  {
+    "name": "Nonce Capital",
+    "url": "https://nonce-capital.xyz/",
+    "logo_source": "https://nonce-capital.xyz/favicon-apple-touch.svg",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/noncecapital.svg"
+  },
+  {
+    "name": "Morpho",
+    "url": "https://morpho.org/",
+    "logo_source": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://morpho.org&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/morpho.png"
+  },
+  {
+    "name": "Pendle",
+    "url": "https://www.pendle.finance/",
+    "logo_source": "https://www.pendle.finance/favicon.ico",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/pendle.png"
+  },
+  {
+    "name": "Curve",
+    "url": "https://curve.fi/",
+    "logo_source": "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://curve.fi&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/curve.png"
+  },
+  {
+    "name": "Grand Millennium",
+    "url": "https://www.millenniumhotels.com/",
+    "logo_source": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://millenniumhotels.com&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/grandmillennium.png"
+  },
+  {
+    "name": "Entravel",
+    "url": "https://entravel.com/",
+    "logo_source": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://entravel.com&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/entravel.png"
+  },
+  {
+    "name": "Plaza Premium Lounge",
+    "url": "https://www.plazapremiumlounge.com/",
+    "logo_source": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://plazapremiumlounge.com&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/plazapremium.png"
+  },
+  {
+    "name": "Tillo",
+    "url": "https://www.tillo.com/",
+    "logo_source": "https://www.tillo.com/hubfs/favicon.jpg",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/tillo.png"
+  },
+  {
+    "name": "Reloadly",
+    "url": "https://www.reloadly.com/",
+    "logo_source": "https://reloadly.com/favicon.ico",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/reloadly.png"
+  },
+  {
+    "name": "Trip.com",
+    "url": "https://www.trip.com/",
+    "logo_source": "https://www.trip.com/trip.ico",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/tripcom.png"
+  },
+  {
+    "name": "DragonPass",
+    "url": "https://en.dragonpass.com.cn/",
+    "logo_source": "https://www.dragonpass.com/apple-icon.png?apple-icon.ae44ea87.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/dragonpass.png"
+  },
+  {
+    "name": "GigSky",
+    "url": "https://www.gigsky.com/",
+    "logo_source": "https://cdn.sanity.io/images/4lreef7q/production/517516d65216e9f9c658eb5b8625082f770a11cd-180x180.svg?w=512",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/gigsky.svg"
+  },
+  {
+    "name": "AXA",
+    "url": "https://www.axa.com/",
+    "logo_source": "https://www.axa.com/images/logo.png?version=4.21.19",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/axa.png"
+  },
+  {
+    "name": "Plume",
+    "url": "https://plume.org/",
+    "logo_source": "https://www.plume.org/favicon.ico",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/plume.png"
+  },
+  {
+    "name": "DigiFT",
+    "url": "https://www.digift.sg/",
+    "logo_source": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://www.digift.sg&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/digift.png"
+  },
+  {
+    "name": "PIMCO",
+    "url": "https://www.pimco.com/",
+    "logo_source": "https://www.pimco.com/ren-assets/img/favicons/favicon.png?rev=2166045438ADE64F8BDD3A82678A8867",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/pimco.png"
+  },
+  {
+    "name": "CMBI",
+    "url": "https://www.cmbi.com.hk/en-US/",
+    "logo_source": "https://www.cmbi.com.hk/favicon.ico",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/cmbi.png"
+  },
+  {
+    "name": "State Street",
+    "url": "https://www.statestreet.com/us/en/asset-manager",
+    "logo_source": "https://www.statestreet.com/ST_Circle-16-16.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/statestreet.png"
+  },
+  {
+    "name": "CMB Wing Lung Bank",
+    "url": "https://www.cmbwinglungbank.com/wlb_corporate/en/index.html",
+    "logo_source": "https://www.cmbwinglungbank.com/favicon.ico",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/cmbwinglung.png"
+  },
+  {
+    "name": "Alpaca",
+    "url": "https://alpaca.markets/",
+    "logo_source": "https://alpaca.markets/icon.svg?icon.1dwli_jc6vl-f.svg",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/alpaca.svg"
+  },
+  {
+    "name": "The Network Firm",
+    "url": "https://www.thenetworkfirm.com/",
+    "logo_source": "https://images.squarespace-cdn.com/content/v1/63d04ceba661446bcb261c61/ec8ca83e-2f25-445c-848a-d66b20ab1c71/favicon.ico?format=100w",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/networkfirm.png"
+  },
+  {
+    "name": "Ondo Finance",
+    "url": "https://ondo.finance/",
+    "logo_source": "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://ondo.finance&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/ondo.png"
+  },
+  {
+    "name": "xStocks (Backed)",
+    "url": "https://xstocks.com/",
+    "logo_source": "https://xstocks.com/apple-touch-icon.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/xstocks.png"
+  },
+  {
+    "name": "Paxos",
+    "url": "https://paxos.com/",
+    "logo_source": "https://framerusercontent.com/images/3wk1ynLuPyrJcVFmKavcqDCaUc.jpg",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/paxos.png"
+  },
+  {
+    "name": "Pyth",
+    "url": "https://pyth.network/",
+    "logo_source": "https://framerusercontent.com/images/wbVGNRExoWHr9jEjGPdn4Bn8ZA.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/pyth.png"
+  },
+  {
+    "name": "Chainlink",
+    "url": "https://chain.link/",
+    "logo_source": "https://cdn.prod.website-files.com/5f6b7190899f41fb70882d08/66570856a4d306e3381b870f_webclip.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/chainlink.png"
+  },
+  {
+    "name": "Sumsub",
+    "url": "https://sumsub.com/",
+    "logo_source": "https://sumsub.com/apple-touch-icon.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/sumsub.png"
+  },
+  {
+    "name": "M0",
+    "url": "https://www.m0.org/",
+    "logo_source": "https://cdn.prod.website-files.com/6762be5b6c55f4c330bf115d/68629cf154df68acdafc8d52_m0_logo_256.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/m0.png"
+  },
+  {
+    "name": "Chronicle",
+    "url": "https://chroniclelabs.org/",
+    "logo_source": "https://chroniclelabs.org/favicon.ico",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/chronicle.png"
+  },
+  {
+    "name": "Gnosis Safe",
+    "url": "https://safe.global/",
+    "logo_source": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://safe.global&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/safe.png"
+  },
+  {
+    "name": "Turnkey",
+    "url": "https://www.turnkey.com/",
+    "logo_source": "https://cdn.prod.website-files.com/676848b756c25a3a99d7f262/677680514040d89a9e94fb1f_webclip.png",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/turnkey.png"
+  },
+  {
+    "name": "Fireblocks",
+    "url": "https://www.fireblocks.com/",
+    "logo_source": "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://fireblocks.com&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/fireblocks.png"
+  },
+  {
+    "name": "Copper",
+    "url": "https://copper.co/",
+    "logo_source": "https://copper.co/icon.svg",
+    "logo_origin": "official-site",
+    "asset": "assets/logos/copper.svg"
+  },
+  {
+    "name": "Zodia Custody",
+    "url": "https://zodia-custody.com/",
+    "logo_source": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://zodia-custody.com&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "asset": "assets/logos/zodia.png"
+  }
+]
