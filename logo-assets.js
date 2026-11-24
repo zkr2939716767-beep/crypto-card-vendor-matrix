@@ -78,5 +78,7 @@ window.VENDOR_LOGO_ASSETS = {
   "certora": "assets/logos/certora.png",
   "paladin": "assets/logos/paladin.png",
   "immunefi": "assets/logos/immunefi.png",
-  "hypernative": "assets/logos/hypernative.png"
+  "hypernative": "assets/logos/hypernative.png",
+  "goplus": "assets/logos/goplus.png",
+  "sift": "assets/logos/sift.png"
 };

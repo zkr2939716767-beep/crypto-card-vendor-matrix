@@ -2,6 +2,8 @@
   "use strict";
 
   const vendors = {
+    goplus: { name: "GoPlus Security", url: "https://gopluslabs.io/", domain: "gopluslabs.io", abbr: "GP", bg: "#0F172A", fg: "#FFFFFF" },
+    sift: { name: "Sift", url: "https://sift.com/", domain: "sift.com", abbr: "SF", bg: "#0F172A", fg: "#FFFFFF" },
     blocksec: { name: "BlockSec", url: "https://blocksec.com/", domain: "blocksec.com", abbr: "BS", bg: "#0F172A", fg: "#FFFFFF" },
     certora: { name: "Certora", url: "https://www.certora.com/", domain: "certora.com", abbr: "CE", bg: "#0F172A", fg: "#FFFFFF" },
     chainalysis: { name: "Chainalysis", url: "https://www.chainalysis.com/", domain: "chainalysis.com", abbr: "CA", bg: "#0F172A", fg: "#FFFFFF" },
@@ -168,7 +170,7 @@
     const noteMatch = rawLabel.match(/\s*(\([^()]*\))\s*$/);
     const label = noteMatch ? rawLabel.slice(0, noteMatch.index).trim() : rawLabel;
     const noteText = noteMatch?.[1] || "";
-    const key = matchVendor(label);
+    const key = pill.dataset.vendorKey || matchVendor(label);
 
     if (!key) {
       console.warn("No official-site mapping for vendor badge:", label);

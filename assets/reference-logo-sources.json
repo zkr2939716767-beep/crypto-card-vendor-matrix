@@ -1,0 +1,28 @@
+[
+  {
+    "key": "goplus",
+    "name": "GoPlus Security",
+    "url": "https://gopluslabs.io/",
+    "domain": "gopluslabs.io",
+    "status": 200,
+    "final_url": "https://gopluslabs.io/en",
+    "title": "GoPlus | Web3 Decentralized Security Layer",
+    "asset": "assets/logos/goplus.png",
+    "logo_source": "https://gopluslabs.io/favicon.png",
+    "logo_origin": "official-site"
+  },
+  {
+    "key": "sift",
+    "name": "Sift",
+    "url": "https://sift.com/",
+    "domain": "sift.com",
+    "page_error": "HTTP Error 403: Forbidden",
+    "status": 403,
+    "asset": "assets/logos/sift.png",
+    "logo_source": "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://sift.com&size=128",
+    "logo_origin": "domain-favicon-cache",
+    "icon_errors": [
+      "cannot identify image file <_io.BytesIO object at 0x10855d4e0>"
+    ]
+  }
+]

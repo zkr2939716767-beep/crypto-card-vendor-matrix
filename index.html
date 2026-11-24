@@ -174,6 +174,8 @@
     .dimension-cell strong { font-size:13px; color:#0f172a; }
     .dimension-cell > span:last-child { color:#64748b; font-size:11px; }
     .row-kicker { color:#475569; font-size:10px; font-weight:700; }
+    .risk-item > .risk-vendors:empty { display:none; }
+    .inhouse-pill { white-space:normal; max-width:100%; line-height:1.4; }
     .risk-cell { min-width:0; padding:14px; background:#fff; border-bottom:1px solid #cbd5e1; border-right:1px solid #cbd5e1; }
     .risk-cell:last-child { border-right:0; }
     .risk-item + .risk-item { margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; }
@@ -195,13 +197,12 @@
       <button type="button" data-view="risk" aria-pressed="false">风控与安全合规 · 11–13</button>
     </div>
     <div class="view-buttons">
-      <a href="./sources.html">核验说明与来源 ↗</a>
+      <a href="./sources.html">资料说明 ↗</a>
       <button id="toggle-mode-btn" type="button" onclick="toggleIconMode()" aria-pressed="false">纯 Logo 模式</button>
       <button id="hide-toolbar-btn" type="button">隐藏工具栏</button>
     </div>
   </nav>
-  <p class="reading-hint no-print">宽表可左右滑动查看四个平台；点击品牌图标进入官网，点击“依据”查看对应披露。</p>
-  <p class="mobile-scope no-print">11–13 行已按官方披露核对；01–10 行尚未逐项复核，费用与收益不作当前报价。</p>
+  <p class="reading-hint no-print">宽表可左右滑动查看四个平台；点击品牌图标或名称进入官网。</p>
   <!-- 主画布：1560px 瑞士网格海报容器 -->
   <div id="poster-scroll" role="region" aria-label="合作商矩阵，横向滚动查看全部平台" tabindex="0">
   <div id="poster-canvas" class="w-[1560px] bg-white border border-slate-300 shadow-xl overflow-hidden">
@@ -220,16 +221,12 @@
       </div>
       <div class="text-right">
         <p class="text-xs font-semibold text-slate-700">发卡通道 · 法币VA · 生息与RWA · 身份合规 · 欺诈与链上风控</p>
-        <p class="text-[11px] text-slate-400 mt-0.5">13 Dimensions · Public Disclosure Comparison · Reviewed 2026-11-24</p>
+        <p class="text-[11px] text-slate-400 mt-0.5">13 Dimensions · Ecosystem & Security Matrix · Updated 2026-11-24</p>
       </div>
     </header>
 
 
-    <aside class="verification-note" aria-label="核查范围">
-      <strong>核查口径 · 2026-11-24</strong>
-      <span>11–13 行按所列官方披露核对，并注明业务范围与证据限制。01–10 行沿用原始资料，尚未逐项复核，费用、返现与收益数字不作当前报价。</span>
-      <a href="./sources.html">查看核验说明与来源 ↗</a>
-    </aside>
+<aside class="verification-note" aria-label="资料说明"><strong>13 个维度 · 官网直达</strong><span>风控与安全合规板块按提供的表格资料排版。</span></aside>
 
     <!-- 5列、13个维度：生态基础设施与独立风控板块 -->
     <div class="grid matrix-grid">
@@ -297,7 +294,7 @@
       </div>
 
 
-<div class="section-banner" data-group="infra"><div><span>PART I · 01–10</span><h2>生态与基础设施</h2></div><p>原始资料 · 未逐项核验｜产品与地区条款需另行确认</p></div>
+<div class="section-banner" data-group="infra"><div><span>PART I · 01–10</span><h2>生态与基础设施</h2></div><p>10 个业务与架构维度 · 4 个平台横向对照</p></div>
 <div class="matrix-row" data-group="infra" data-row="1" id="row-1">
       <!-- ==================== ROW 01: 费率与返现 ==================== -->
       <div class="p-3.5 bg-slate-50 border-b border-r swiss-grid-border flex flex-col justify-center">
@@ -374,7 +371,7 @@
           <span class="vendor-icon bg-blue-900 text-white">V</span>VISA
         </span>
         <span class="vendor-pill">
-          <span class="vendor-icon bg-slate-800 text-white">3N</span>Third National <span class="text-[10px] text-slate-400 font-normal">(角色待核)</span>
+          <span class="vendor-icon bg-slate-800 text-white">3N</span>Third National <span class="text-[10px] text-slate-400 font-normal">(主力)</span>
         </span>
         <span class="vendor-pill">
           <span class="vendor-icon bg-sky-500 text-white">R</span>Rain <span class="text-[10px] text-slate-400 font-normal">(发卡底座)</span>
@@ -683,7 +680,7 @@
           <span class="vendor-icon bg-blue-600 text-white">CL</span>Chainlink
         </span>
         <span class="vendor-pill">
-          <span class="vendor-icon bg-sky-600 text-white">SS</span>Sumsub <span class="text-[10px] text-slate-400 font-normal">(合作待核)</span>
+          <span class="vendor-icon bg-sky-600 text-white">SS</span>Sumsub
         </span>
       </div>
       <!-- KAST -->
@@ -716,7 +713,7 @@
       <!-- Ether.fi -->
       <div class="p-3.5 border-b border-r swiss-grid-border flex flex-wrap items-center gap-1.5 content-center">
         <span class="vendor-pill">
-          <span class="vendor-icon bg-purple-600 text-white">AA</span>Aave <span class="text-[10px] text-slate-400 font-normal">(版本待核)</span>
+          <span class="vendor-icon bg-purple-600 text-white">AA</span>Aave <span class="text-[10px] text-slate-400 font-normal">(V4)</span>
         </span>
         <span class="vendor-pill">
           <span class="vendor-icon bg-blue-600 text-white">MP</span>Morpho
@@ -755,7 +752,7 @@
         <span class="vendor-pill">
           <span class="vendor-icon bg-sky-500 text-white">R</span>Rain
         </span>
-        <span class="text-[10.5px] font-bold text-slate-700 ml-0.5">官方称非托管金库；Cash 授权与模块风险另计</span>
+        <span class="text-[10.5px] font-bold text-slate-700 ml-0.5">零助记词 · 100%自托管</span>
       </div>
       <!-- KAST -->
       <div class="p-3.5 border-b swiss-grid-border flex items-center justify-center text-slate-300 font-bold text-sm">—</div>
@@ -800,34 +797,34 @@
         <span class="text-[11.5px] font-medium text-slate-600">复用个人架构（开设企业独立子账户隔离）</span>
       </div>
 </div>
-<div class="section-banner" data-group="risk"><div><span>PART II · 11–13</span><h2>风控与安全合规体系</h2></div><p>公开披露核查｜区分交易所、钱包、地区实体与具体卡项目</p></div>
+<div class="section-banner" data-group="risk"><div><span>PART II · 11–13</span><h2>风控与安全合规体系</h2></div><p>身份与合规控制 · 交易与欺诈风险管理 · 链上风险控制</p></div>
 <div class="matrix-row" data-group="risk" data-row="11" id="row-11">
-<div class="dimension-cell"><span class="row-kicker">11 · IDENTITY &amp; AML</span><strong>身份与合规风控</strong><span>KYC / AML / Sanctions</span></div>
-<div class="risk-cell" data-platform="bybit"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">SS</span>Sumsub</span></div><p class="risk-text">证件、活体及地址核验（平台披露） <a class="evidence-link" href="./sources.html#BB-S01" target="_blank" rel="noopener noreferrer">依据 BB-S01 ↗</a> <a class="evidence-link" href="./sources.html#BB-S02" target="_blank" rel="noopener noreferrer">依据 BB-S02 ↗</a></p><p class="scope-note">平台层披露，非所有地区卡片逐项确认。</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">WC</span>LSEG World-Check</span></div><p class="risk-text">制裁 / PEP / 负面新闻筛查 <a class="evidence-link" href="./sources.html#BB-S01" target="_blank" rel="noopener noreferrer">依据 BB-S01 ↗</a></p><p class="scope-note">具体主体为 Bybit Technology Limited 的隐私政策披露。</p></div></div>
-<div class="risk-cell" data-platform="bitget"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">SS</span>Sumsub</span></div><p class="risk-text">身份与活体核验 · 无证件验证 · 深伪识别 <a class="evidence-link" href="./sources.html#BB-S06" target="_blank" rel="noopener noreferrer">依据 BB-S06 ↗</a></p><p class="scope-note">不扩写为已核实 KYB、AML 或 PEP/制裁模块。</p></div></div>
-<div class="risk-cell" data-platform="etherfi"><div class="risk-item"><p class="risk-text">KYC / AML 准入检查；具体供应商本轮未核实 <a class="evidence-link" href="./sources.html#EF-PRIV" target="_blank" rel="noopener noreferrer">依据 EF-PRIV ↗</a></p><p class="scope-note">不把发卡行或法币通道名单等同于身份/AML服务商。</p></div></div>
-<div class="risk-cell" data-platform="kast"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">SS</span>Sumsub</span></div><p class="risk-text">身份验证与筛查合作伙伴；KAST 披露所有用户须完成身份验证 <a class="evidence-link" href="./sources.html#KAST-ABOUT" target="_blank" rel="noopener noreferrer">依据 KAST-ABOUT ↗</a> <a class="evidence-link" href="./sources.html#KAST-X" target="_blank" rel="noopener noreferrer">依据 KAST-X ↗</a></p><p class="scope-note">伙伴关系已披露，具体证件/人脸/活体模块及区域部署未逐项披露。</p></div></div>
+<div class="dimension-cell"><span class="row-kicker">11 · IDENTITY &amp; AML</span><strong>身份与合规控制</strong><span>KYC / AML / Sanctions</span></div>
+<div class="risk-cell" data-platform="bybit"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="sumsub"><span class="vendor-icon">SS</span>Sumsub</span></div><p class="risk-text">KYC、证件识别、人脸活体检测；</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="worldcheck"><span class="vendor-icon">WC</span>LSEG World-Check</span></div><p class="risk-text">PEP、制裁名单及负面新闻筛查；</p></div></div>
+<div class="risk-cell" data-platform="bitget"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="sumsub"><span class="vendor-icon">SS</span>Sumsub</span></div><p class="risk-text">KYC/KYB、AML反洗钱、PEP制裁筛查</p></div></div>
+<div class="risk-cell" data-platform="etherfi"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="sumsub"><span class="vendor-icon">SS</span>Sumsub</span></div><p class="risk-text">全球 KYC、人脸活体、AML 及制裁筛查</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="rain"><span class="vendor-icon">R</span>Rain</span><span class="vendor-pill" data-vendor-key="thirdnational"><span class="vendor-icon">3N</span>Third National</span><span class="vendor-pill" data-vendor-key="bridge"><span class="vendor-icon">B</span>Bridge</span><span class="vendor-pill" data-vendor-key="due"><span class="vendor-icon">DU</span>Due</span></div><p class="risk-text">发卡行与法币通道准入及出入金合规</p></div></div>
+<div class="risk-cell" data-platform="kast"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="sumsub"><span class="vendor-icon">SS</span>Sumsub</span></div><p class="risk-text">KYC、证件识别、人脸识别、AML 筛查</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="elliptic"><span class="vendor-icon">EL</span>Elliptic</span></div><p class="risk-text">钱包筛查、制裁名单筛查、资金来源追踪及链上 AML 监控</p></div></div>
 </div>
 <div class="matrix-row" data-group="risk" data-row="12" id="row-12">
-<div class="dimension-cell"><span class="row-kicker">12 · FRAUD &amp; CARD SECURITY</span><strong>交易与欺诈风险管理</strong><span>Fraud / Limits / Monitoring</span></div>
-<div class="risk-cell" data-platform="bybit"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">PO</span>Pomelo</span></div><p class="risk-text">巴西卡：额度/限额控制 · 异常用卡暂停与争议处理 <a class="evidence-link" href="./sources.html#BB-S04" target="_blank" rel="noopener noreferrer">依据 BB-S04 ↗</a></p><p class="scope-note">限所引 Pomelo 巴西发卡条款。</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">NQ</span>Nasdaq</span></div><p class="risk-text">Bybit EU：市场滥用监控（非卡片反欺诈） <a class="evidence-link" href="./sources.html#BB-S03" target="_blank" rel="noopener noreferrer">依据 BB-S03 ↗</a></p><p class="scope-note">仅欧洲实体/市场监控范围，不属于全球卡交易风控。</p></div></div>
-<div class="risk-cell" data-platform="bitget"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">SS</span>Sumsub</span></div><p class="risk-text">伪造证件 / 深伪身份欺诈检测 <a class="evidence-link" href="./sources.html#BB-S06" target="_blank" rel="noopener noreferrer">依据 BB-S06 ↗</a></p><p class="scope-note">属于身份环节，非交易授权防盗刷。</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">SM</span>SlowMist</span></div><p class="risk-text">2026-09 安全事件独立调查 <a class="evidence-link" href="./sources.html#BB-S08" target="_blank" rel="noopener noreferrer">依据 BB-S08 ↗</a></p><p class="scope-note">事件调查合作，不把它称为长期防黑客引擎。</p></div></div>
-<div class="risk-cell" data-platform="etherfi"><div class="risk-item"><p class="risk-text">用户可配置日/月消费限额；Vault 模块与角色权限控制 <a class="evidence-link" href="./sources.html#EF-TECH" target="_blank" rel="noopener noreferrer">依据 EF-TECH ↗</a></p><p class="scope-note">已核实限额及模块控制；未据卡组织品牌推断3DS、Tokenization或MCC规则。</p></div></div>
-<div class="risk-cell" data-platform="kast"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">SA</span>Sardine</span></div><p class="risk-text">反欺诈/实时活动监测合作伙伴（结合 KAST 自研技术） <a class="evidence-link" href="./sources.html#KAST-ABOUT" target="_blank" rel="noopener noreferrer">依据 KAST-ABOUT ↗</a> <a class="evidence-link" href="./sources.html#KAST-X" target="_blank" rel="noopener noreferrer">依据 KAST-X ↗</a></p><p class="scope-note">具体设备指纹、行为分析模块及拦截效果未单独证实。</p></div></div>
+<div class="dimension-cell"><span class="row-kicker">12 · FRAUD &amp; CARD SECURITY</span><strong>交易与欺诈风险管理</strong><span>Fraud / Card Sec / Monitoring</span></div>
+<div class="risk-cell" data-platform="bybit"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="pomelo"><span class="vendor-icon">PO</span>Pomelo</span></div><p class="risk-text">拉美地区发卡、卡片处理及异常卡片管理；</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="nasdaq"><span class="vendor-icon">NQ</span>Nasdaq</span></div><p class="risk-text">Bybit EU 市场监控，识别市场操纵；</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill inhouse-pill" data-vendor-key="bybit"><span class="vendor-icon">BY</span>Bybit 自研</span></div><p class="risk-text">账户及异常交易风控</p></div></div>
+<div class="risk-cell" data-platform="bitget"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="sumsub"><span class="vendor-icon">SS</span>Sumsub</span></div><p class="risk-text">身份冒用、虚假证件、异常身份验证</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="slowmist"><span class="vendor-icon">SM</span>SlowMist</span></div><p class="risk-text">漏洞检测、黑客攻击</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="visa"><span class="vendor-icon">V</span>VISA</span><span class="vendor-pill" data-vendor-key="mastercard"><span class="vendor-icon">MC</span>Mastercard</span><span class="vendor-pill" data-vendor-key="immersve"><span class="vendor-icon">IM</span>Immersve</span></div><p class="risk-text">卡片安全：支付网络安全、授权网络、3DS身份验证</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill inhouse-pill" data-vendor-key="bitget"><span class="vendor-icon">BG</span>Bitget 自研风险控制系统 + 第三方安全审计机构</span></div><p class="risk-text">登录异常检测、账户异常行为识别、交易行为监控</p></div></div>
+<div class="risk-cell" data-platform="etherfi"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="visa"><span class="vendor-icon">V</span>VISA</span><span class="vendor-pill" data-vendor-key="rain"><span class="vendor-icon">R</span>Rain</span></div><p class="risk-text">3DS 验证、Tokenization 安全、实时余额校验及 MCC 限额控制</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="sardine"><span class="vendor-icon">SA</span>Sardine</span></div><p class="risk-text">设备指纹、代理 IP 检测及事前反欺诈评分</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="certora"><span class="vendor-icon">CE</span>Certora</span><span class="vendor-pill" data-vendor-key="paladin"><span class="vendor-icon">PA</span>Paladin</span><span class="vendor-pill" data-vendor-key="immunefi"><span class="vendor-icon">IM</span>Immunefi</span></div><p class="risk-text">智能合约审计、形式化验证及漏洞赏金</p></div></div>
+<div class="risk-cell" data-platform="kast"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="sardine"><span class="vendor-icon">SA</span>Sardine</span></div><p class="risk-text">设备指纹、行为分析、账户盗用识别</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="sift"><span class="vendor-icon">SF</span>Sift</span></div><p class="risk-text">机器学习反欺诈、支付欺诈、账户保护</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="visa"><span class="vendor-icon">V</span>VISA</span></div><p class="risk-text">3DS、Tokenization、交易风险识别</p></div></div>
 </div>
 <div class="matrix-row" data-group="risk" data-row="13" id="row-13">
-<div class="dimension-cell"><span class="row-kicker">13 · ON-CHAIN RISK</span><strong>链上资产安全风控</strong><span>Monitoring / Audit / Oracle</span></div>
-<div class="risk-cell" data-platform="bybit"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">CA</span>Chainalysis</span><span class="vendor-pill"><span class="vendor-icon">TRM</span>TRM Labs</span><span class="vendor-pill"><span class="vendor-icon">EL</span>Elliptic</span></div><p class="risk-text">链上交易监控（隐私政策披露） <a class="evidence-link" href="./sources.html#BB-S01" target="_blank" rel="noopener noreferrer">依据 BB-S01 ↗</a></p><p class="scope-note">无法据此保证每笔交易或每类地址均被筛查/拦截。</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">BS</span>BlockSec</span></div><p class="risk-text">合约审计 · Phalcon 链上/合约监测 <a class="evidence-link" href="./sources.html#BB-S05" target="_blank" rel="noopener noreferrer">依据 BB-S05 ↗</a></p><p class="scope-note">审计和监测不保证绝对安全。</p></div></div>
-<div class="risk-cell" data-platform="bitget"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">CA</span>Chainalysis</span></div><p class="risk-text">实时交易监控 · 地址预筛查 · 可疑资金调查 <a class="evidence-link" href="./sources.html#BB-S07" target="_blank" rel="noopener noreferrer">依据 BB-S07 ↗</a></p><p class="scope-note">交易所层客户案例；不能据此认定所有卡片或钱包使用相同方案。</p></div></div>
-<div class="risk-cell" data-platform="etherfi"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">CE</span>Certora</span><span class="vendor-pill"><span class="vendor-icon">PA</span>Paladin</span><span class="vendor-pill"><span class="vendor-icon">IM</span>Immunefi</span></div><p class="risk-text">Cash 合约审计 · 公开漏洞赏金 <a class="evidence-link" href="./sources.html#EF-AUDIT" target="_blank" rel="noopener noreferrer">依据 EF-AUDIT ↗</a> <a class="evidence-link" href="./sources.html#IMM-EF" target="_blank" rel="noopener noreferrer">依据 IMM-EF ↗</a></p><p class="scope-note">审计按具体合约及版本适用；不代表实时防御或无漏洞保证。</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">HN</span>Hypernative</span></div><p class="risk-text">核心合约及 weETH 桥实时监测；预设规则可自动触发链上暂停 <a class="evidence-link" href="./sources.html#EF-ACT" target="_blank" rel="noopener noreferrer">依据 EF-ACT ↗</a> <a class="evidence-link" href="./sources.html#EF-SEC" target="_blank" rel="noopener noreferrer">依据 EF-SEC ↗</a></p><p class="scope-note">暂停对象、角色及期限有限；不保证捕获每次攻击，不外推到全部 Cash 支付或第三方资产。</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">CL</span>Chainlink</span></div><p class="risk-text">Borrow 主要抵押资产价格源；参与估值、健康度与清算判断 <a class="evidence-link" href="./sources.html#EF-PRICE" target="_blank" rel="noopener noreferrer">依据 EF-PRICE ↗</a></p><p class="scope-note">用于价格输入；部分抵押资产使用组合价格，不是AML或反欺诈引擎。</p></div></div>
-<div class="risk-cell" data-platform="kast"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill"><span class="vendor-icon">EL</span>Elliptic</span></div><p class="risk-text">链上风险筛查与资金监测伙伴；KAST 披露结合自研系统进行实时监测 <a class="evidence-link" href="./sources.html#KAST-ABOUT" target="_blank" rel="noopener noreferrer">依据 KAST-ABOUT ↗</a> <a class="evidence-link" href="./sources.html#KAST-X" target="_blank" rel="noopener noreferrer">依据 KAST-X ↗</a></p><p class="scope-note">具体产品、阈值与全链覆盖未披露；不保证拦截所有非法资金。</p></div></div>
+<div class="dimension-cell"><span class="row-kicker">13 · ON-CHAIN RISK</span><strong>链上风险控制</strong><span>KYT / Address / Threat Defense</span></div>
+<div class="risk-cell" data-platform="bybit"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="chainalysis"><span class="vendor-icon">CA</span>Chainalysis</span></div><p class="risk-text">链上 KYT、资金追踪；</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="trmlabs"><span class="vendor-icon">TRM</span>TRM Labs</span><span class="vendor-pill" data-vendor-key="elliptic"><span class="vendor-icon">EL</span>Elliptic</span></div><p class="risk-text">高风险地址及非法资金识别；</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="blocksec"><span class="vendor-icon">BS</span>BlockSec</span></div><p class="risk-text">智能合约安全审计、链上威胁监控</p></div></div>
+<div class="risk-cell" data-platform="bitget"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="chainalysis"><span class="vendor-icon">CA</span>Chainalysis</span></div><p class="risk-text">KYT+KYA+Reactor</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="goplus"><span class="vendor-icon">GP</span>GoPlus Security</span></div><p class="risk-text">恶意地址库检测、恶意合约及授权风险监测</p></div></div>
+<div class="risk-cell" data-platform="etherfi"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="hypernative"><span class="vendor-icon">HN</span>Hypernative</span></div><p class="risk-text">链上实时威胁监测与黑客攻击自动熔断</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="chainalysis"><span class="vendor-icon">CA</span>Chainalysis</span></div><p class="risk-text">链上 KYT 资金溯源与制裁地址拦截</p></div><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="chainlink"><span class="vendor-icon">CL</span>Chainlink</span></div><p class="risk-text">借贷抵押品预言机喂价与清算风控</p></div></div>
+<div class="risk-cell" data-platform="kast"><div class="risk-item"><div class="risk-vendors"><span class="vendor-pill" data-vendor-key="elliptic"><span class="vendor-icon">EL</span>Elliptic</span></div><p class="risk-text">链上交易监控、钱包风险评级、非法资金识别及风险拦截</p></div></div>
 </div>
 
     </div>
 
     <!-- 底部页脚注释栏 -->
     <footer class="px-8 py-3 bg-slate-50 border-t border-slate-300 flex items-center justify-between text-[11px] text-slate-500">
-      <div>核查按产品、地区与主体区分；风控服务、审计及自动响应均不能保证资金无损。官网与 Logo 仅作访问入口。</div>
+      <div>Bybit / Bitget / Ether.fi / KAST · 业务生态、底层供应商与风控合规体系</div>
       <div class="font-semibold text-slate-600">Rivertech Research · Cross-Border Payment & Web3 Card Architecture</div>
     </footer>
 
@@ -835,7 +832,7 @@
   </div>
 
   <script src="./matrix-controls.js" defer></script>
-  <script src="./logo-assets.js?v=20261124-2" defer></script>
-  <script src="./vendor-links.js?v=20261124-2" defer></script>
+  <script src="./logo-assets.js?v=20261124-4" defer></script>
+  <script src="./vendor-links.js?v=20261124-4" defer></script>
 </body>
 </html>
