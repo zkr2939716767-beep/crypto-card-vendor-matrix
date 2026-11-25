@@ -1,4 +1,6 @@
 window.VENDOR_LOGO_ASSETS = {
+  "bitgetwallet": "assets/logos/bitgetwallet.png",
+  "bitgetwalletcard": "assets/logos/bitgetwallet.png",
   "bybit": "assets/logos/bybit.png",
   "bitget": "assets/logos/bitget.png",
   "etherfi": "assets/logos/etherfi.png",

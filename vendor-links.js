@@ -2,6 +2,8 @@
   "use strict";
 
   const vendors = {
+    bitgetwallet: { name: "Bitget Wallet", url: "https://web3.bitget.com/", domain: "web3.bitget.com", abbr: "BW", bg: "#000000", fg: "#A3FFB1" },
+    bitgetwalletcard: { name: "Bitget Wallet Card", url: "https://web3.bitget.com/card", domain: "web3.bitget.com", abbr: "BW", bg: "#000000", fg: "#A3FFB1" },
     goplus: { name: "GoPlus Security", url: "https://gopluslabs.io/", domain: "gopluslabs.io", abbr: "GP", bg: "#0F172A", fg: "#FFFFFF" },
     sift: { name: "Sift", url: "https://sift.com/", domain: "sift.com", abbr: "SF", bg: "#0F172A", fg: "#FFFFFF" },
     blocksec: { name: "BlockSec", url: "https://blocksec.com/", domain: "blocksec.com", abbr: "BS", bg: "#0F172A", fg: "#FFFFFF" },

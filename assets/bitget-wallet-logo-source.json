@@ -1,0 +1,14 @@
+{
+  "key": "bitgetwallet",
+  "name": "Bitget Wallet",
+  "url": "https://web3.bitget.com/",
+  "asset": "assets/logos/bitgetwallet.png",
+  "logo_source": "https://web3.bitget.com/favicon-192x192.png",
+  "logo_origin": "official-site",
+  "pixels": [
+    192,
+    192
+  ],
+  "sha256": "a407b77fb3f2309efd73818d0c8db2a740504f41188e0dc5dbe65801915d21fc",
+  "checked_on": "2026-11-25"
+}
