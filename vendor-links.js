@@ -198,11 +198,12 @@
 
     const link = document.createElement("a");
     link.className = pill.className;
-    link.href = vendors[key].url;
+    const officialUrl = pill.dataset.officialUrl;
+    link.href = officialUrl || vendors[key].url;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.title = `访问 ${vendors[key].name} 官网`;
-    link.setAttribute("aria-label", `访问 ${vendors[key].name} 官方网站（新窗口）`);
+    link.title = officialUrl ? `查看 ${label} 官方说明` : `访问 ${vendors[key].name} 官网`;
+    link.setAttribute("aria-label", officialUrl ? `查看 ${label} 官方说明（新窗口）` : `访问 ${vendors[key].name} 官方网站（新窗口）`);
 
     if (icon) link.append(createLogo(vendors[key], "logo-box"));
     const name = document.createElement("span");
